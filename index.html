@@ -1773,10 +1773,12 @@
     var ki=r.kongInfo;
     var order=[p.ren,p.shen,p.jiang,p.fang];
     var keHTML=order.map(function(o){
+      /* 全部靠右對齊：單干／單支都擺在第二欄（地支欄），空位留在前面，
+         四行的干支右緣才會落在同一條直線上 */
       var gz = (o.gan&&o.zhi)
         ? '<span class="g">'+o.gan+'</span><span class="z">'+o.zhi+'</span>'
-        : (o.gan ? '<span class="g">'+o.gan+'</span><span class="z ph"></span>'
-                 : '<span class="g ph"></span><span class="z">'+o.zhi+'</span>');
+        : (o.gan ? '<span class="ph"></span><span class="g">'+o.gan+'</span>'
+                 : '<span class="ph"></span><span class="z">'+o.zhi+'</span>');
       var mk=[];
       if(o.used) mk.push('（用）');
       if(o.label==='地分') mk.push(r.fangSrc==='hour'?'（時辰）':'（自選）');
