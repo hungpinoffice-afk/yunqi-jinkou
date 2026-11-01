@@ -530,6 +530,13 @@
     .ke-mark{grid-area:mk;font-size:10px;line-height:1.25;text-align:left;
       text-indent:-.6em;min-width:0;white-space:normal;letter-spacing:-.02em;
       align-self:end}
+    /* 單字標記（用）：改成對齊「標籤正中央」。
+       寬度取標籤兩字的寬度（12.5px×2＋字距≈26px），內容置中就會以標籤中心為軸，
+       標記比 26px 寬時左右平均溢出，視覺上正好居中。 */
+    .ke-mark.mk-c{text-align:center;text-indent:0;width:2.6em;min-width:0;
+      justify-self:start;position:relative;left:-3px}
+    /* 全角括號在字身內左右留白不對稱（左 0.73em、右 0.23em），
+       純置中會偏右約 3px，故再左推 3px，括號筆畫才會落在標籤正中央 */
     .ke-lb{text-indent:0}
     .ke-mark span{display:inline}
     .ke-lb{grid-area:lb;font-size:12.5px;line-height:1.3;text-align:left;
@@ -1793,10 +1800,14 @@
       var mk=[];
       if(o.used) mk.push('（用）');
       if(o.label==='地分') mk.push(r.fangSrc==='hour'?'（時辰）':'（自選）');
+      /* 只有一個字的標記（用）→ 對齊標籤正中央；兩個字以上（時辰／自選）→ 左對齊，
+         因為它比標籤寬，置中會左右各凸出半個字 */
+      var mtxt = mk.join('').replace(/[（）]/g,'');
+      var mcls = mtxt.length<=1 ? ' ke-mark mk-c' : ' ke-mark';
       var mark = mk.length ? mk.map(function(t){return '<span>'+t+'</span>';}).join('')
         : '<span class="off">（用）</span>';
       return '<div class="ke-row'+(o.used?' used':'')+'">'+
-        '<span class="ke-mark">'+mark+'</span>'+
+        '<span class="'+mcls.trim()+'">'+mark+'</span>'+
         '<div class="ke-lb lb-'+posClass(o.label)+'">'+o.label+'</div>'+
         '<div class="ke-main"><span class="gz">'+gz+'</span>'+
           (o.name&&o.label!=='地分'?'<span class="jm">'+o.name+'</span>':'')+

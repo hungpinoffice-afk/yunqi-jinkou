@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#100d0a">
+<title>雲起時 金口訣</title>
+<style>
+  :root{
+    --bg:#0a0c0f; --bg2:#0e1216; --panel:#14191f; --panel2:#1a2028;
+    --line:#2a323c; --line2:#3a4450;
+    --gold:#d9b26a; --gold-d:#8d733f; --cin:#c8503c; --jade:#4fbf8b;
+    --text:#ece7dc; --muted:#98a2ae; --dim:#6d7884;
+    --wx-mu:#4fbf8b; --wx-huo:#e2603f; --wx-tu:#cfae46; --wx-jin:#c9d2db; --wx-shui:#4b9fe1;
+    --r:16px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(120% 60% at 50% -10%, #1a222b 0%, rgba(10,12,15,0) 60%),
+      linear-gradient(180deg,#0a0c0f 0%, #0b0e12 40%, #090b0e 100%);
+    color:var(--text);
+    font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;
+    font-size:15px;line-height:1.65;
+    min-height:100dvh;
+    padding-bottom:calc(28px + env(safe-area-inset-bottom));
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+  .serif{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}
+
+  /* ---------- header ---------- */
+  header{padding:22px 0 6px;text-align:center}
+  .h-kicker{font-size:11px;letter-spacing:.34em;color:var(--gold-d);text-transform:uppercase}
+  h1{margin:8px 0 4px;font-size:clamp(24px,6.4vw,30px);font-weight:600;letter-spacing:.16em;
+     font-family:"Noto Serif TC","Songti TC",serif;color:#f3ead6}
+  h1 .dot{color:var(--gold);margin:0 .18em;font-size:.7em;vertical-align:.12em}
+  .h-sub{font-size:16px;color:var(--gold);letter-spacing:.2em;text-indent:.2em;margin-top:8px;font-weight:500}
+  .h-rule{height:1px;background:linear-gradient(90deg,transparent,var(--line2),transparent);margin:16px 0 0}
+
+  /* ---------- tabs ---------- */
+  nav.tabs{position:sticky;top:0;z-index:20;display:flex;gap:6px;padding:10px 16px;
+    background:linear-gradient(180deg,rgba(10,12,15,.97),rgba(10,12,15,.86));
+    backdrop-filter:blur(10px);border-bottom:1px solid rgba(58,68,80,.35)}
+  nav.tabs .inner{display:flex;gap:6px;width:100%;max-width:728px;margin:0 auto}
+  nav.tabs button{
+    flex:1;appearance:none;border:1px solid var(--line);background:var(--panel);
+    color:var(--muted);padding:10px 8px;border-radius:12px;font-size:14px;letter-spacing:.12em;
+    font-family:"Noto Serif TC",serif;cursor:pointer;transition:.18s;
+  }
+  nav.tabs button.on{color:#171207;background:linear-gradient(180deg,#e6c886,#c9a25c);
+    border-color:#e6c886;box-shadow:0 4px 18px -8px rgba(217,178,106,.9);font-weight:600}
+
+  /* ---------- cards ---------- */
+  .card{background:linear-gradient(180deg,var(--panel) 0%, #11161b 100%);
+    border:1px solid rgba(58,68,80,.55);border-radius:var(--r);padding:16px;margin:14px 0;
+    box-shadow:0 18px 40px -30px #000}
+  .c-head{display:flex;align-items:center;gap:9px;margin-bottom:12px;flex-wrap:wrap;row-gap:7px}
+  .c-no{width:22px;height:22px;flex:0 0 22px;border-radius:50%;display:grid;place-items:center;
+    font-size:12px;color:#1a1408;background:linear-gradient(180deg,#e6c886,#c19a52);font-weight:700}
+  .c-title{font-size:15px;letter-spacing:.1em;font-family:"Noto Serif TC",serif;color:#eee4cf}
+  .c-note{font-size:11.5px;color:var(--dim);margin-left:auto;letter-spacing:.02em}
+
+  label.fld{display:block;font-size:12px;color:var(--muted);margin:0 0 6px;letter-spacing:.08em}
+  input[type="datetime-local"],input[type="number"],input[type="text"],select{
+    width:100%;padding:11px 12px;border-radius:12px;background:#0c1014;color:var(--text);
+    border:1px solid var(--line);font-size:15px;font-family:inherit;
+  }
+  select{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:pointer;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%2398a2ae' stroke-width='1.6'/></svg>");
+    background-repeat:no-repeat;background-position:right 12px center}
+  .gzrow{display:grid;grid-template-columns:3.2em 1fr;gap:8px;align-items:center;margin-bottom:8px}
+  .gz2{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
+  .gz2 select{width:100%;padding-right:24px;background-position:right 7px center}
+  .gz2 select:first-child{color:#f0dfb9}
+  .gzlb{font-family:"Noto Serif TC",serif;font-size:13px;color:var(--muted);letter-spacing:.12em}
+  input:focus,select:focus{outline:none;border-color:var(--gold-d)}
+  .dtwrap{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;max-width:600px}
+  .dtgrid{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;gap:7px;align-items:end;flex:1 1 380px;min-width:0}
+  .dtnow{flex:0 0 auto;padding:11px 16px;font-size:14px;white-space:nowrap;margin-bottom:1px}
+  .dtcell{display:flex;flex-direction:column;gap:5px;min-width:0;position:relative}
+  .dtlb{font-family:"Noto Serif TC",serif;font-size:11.5px;color:var(--muted);letter-spacing:.16em;text-align:center}
+  .dtcell input,.dtcell select{padding:11px 4px;text-align:center;font-size:16px;
+    border-radius:12px;background:#0c1014;color:var(--text);border:1px solid var(--line);width:100%;font-family:inherit}
+  .dtcell select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:none}
+  .dtcell.sel::after{content:"";position:absolute;right:7px;bottom:16px;width:0;height:0;
+    border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-top:4.5px solid #78828f;
+    pointer-events:none}
+  .dtcell input::-webkit-outer-spin-button,.dtcell input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .dtcell input{-moz-appearance:textfield}
+  @media(max-width:380px){.dtcell input,.dtcell select{font-size:15px;padding:10px 2px}
+    .dtcell.sel::after{right:5px;bottom:14px}}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .sec-head{display:flex;align-items:center;gap:12px;margin:30px 0 14px}
+  .sec-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(217,178,106,.45),transparent)}
+  .sec-t{font-family:"Noto Serif TC",serif;font-size:13.5px;letter-spacing:.34em;color:#d9b26a;white-space:nowrap}
+  .row.gap{margin-top:10px}
+
+  .tmrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:470px}
+  .tmcol{display:flex;flex-direction:column;min-width:0}
+  .tmcol select{width:100%}
+  @media(max-width:359px){.tmrow{grid-template-columns:1fr;gap:10px}}
+  .tmode-gap{height:12px}
+  .seg{display:flex;gap:6px;flex-wrap:wrap}
+  .seg button{flex:1 1 auto;min-width:66px;padding:9px 6px;border-radius:11px;border:1px solid var(--line);
+    background:#0d1115;color:var(--muted);font-size:13px;font-family:inherit;cursor:pointer;transition:.16s}
+  .seg button.on{background:rgba(217,178,106,.12);border-color:var(--gold-d);color:#f0dfb9}
+
+
+  .btn-main{width:100%;margin-top:6px;padding:15px;border:none;border-radius:14px;cursor:pointer;
+    font-family:"Noto Serif TC",serif;font-size:17px;letter-spacing:.32em;color:#1a1408;
+    background:linear-gradient(180deg,#efd49a,#c8a057);
+    box-shadow:0 14px 34px -18px rgba(217,178,106,.85);transition:.16s}
+  .btn-main:active{transform:translateY(1px)}
+  .btn-ghost{padding:9px 12px;border-radius:11px;border:1px solid var(--line);background:#0d1115;
+    color:var(--muted);font-size:13px;font-family:inherit;cursor:pointer}
+  .btn-ghost:hover{border-color:var(--line2);color:var(--text)}
+  .btn-ghost.gold{color:var(--gold);border-color:var(--gold-d)}
+
+
+  /* ---------- 四柱 ---------- */
+  .sz{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .sz .col{background:#0e1318;border:1px solid rgba(58,68,80,.5);border-radius:12px;padding:9px 4px;text-align:center}
+  .sz .k{font-size:10.5px;color:var(--dim);letter-spacing:.1em;margin-bottom:3px}
+  .sz .g{font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.15;color:#efe2c6}
+  .sz .z{font-family:"Noto Serif TC",serif;font-size:21px;line-height:1.15;color:#cfc3a9}
+  .sz .col.dy .g,.sz .col.dy .z{color:var(--gold)}
+
+  .kvgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+  .kv{background:#0e1318;border:1px solid rgba(58,68,80,.4);border-radius:10px;padding:8px 10px}
+  .kv .k{font-size:10.5px;color:var(--dim);letter-spacing:.08em}
+  .kv .v{font-size:13.5px;color:#e6dcc8;margin-top:1px}
+
+  /* ---------- 課式 ---------- */
+  .ke{margin-top:4px}
+  .ke-row{display:grid;grid-template-columns:44px 52px 1fr;gap:8px;align-items:center;
+    padding:11px 12px;border-radius:12px;border:1px solid rgba(58,68,80,.4);
+    background:linear-gradient(90deg,rgba(26,32,40,.75),rgba(16,21,26,.6));margin-bottom:8px;position:relative}
+  .ke-row.used{border-color:var(--gold-d);background:linear-gradient(90deg,rgba(217,178,106,.13),rgba(217,178,106,.03));
+    box-shadow:inset 0 0 0 1px rgba(217,178,106,.16)}
+  .ke-mark{font-family:"Noto Serif TC",serif;font-size:11.5px;line-height:1.35;color:#eccd8e;
+    text-align:center;white-space:nowrap;letter-spacing:0;min-width:36px}
+  .ke-mark span{display:block}
+  .ke-mark .off{visibility:hidden}
+  .chip.yy{font-weight:700;min-width:20px;text-align:center;padding:1.5px 6px;border-color:transparent}
+  .chip.yy-yang{color:#efd6a2;background:rgba(217,178,106,.16);border:1px solid rgba(217,178,106,.42)}
+  .chip.yy-yin{color:#a9c4dd;background:rgba(110,150,195,.15);border:1px solid rgba(110,150,195,.4)}
+  .ke-lb{font-family:"Noto Serif TC",serif;font-size:13px;color:var(--muted);letter-spacing:.14em;text-align:center}
+  .ke-main{display:grid;grid-template-columns:68px 68px minmax(0,1fr);
+    align-items:center;column-gap:8px;min-width:0}
+  .ke-main>.gz{grid-column:1}
+  .ke-main>.jm{grid-column:2}
+  .ke-main>.chips{grid-column:3}
+  .gz{font-family:"Noto Serif TC",serif;font-size:clamp(26px,7vw,32px);line-height:1.1;letter-spacing:.06em;
+    display:inline-grid;grid-template-columns:1fr 1fr;white-space:nowrap;justify-self:center}
+  .gz>span{text-align:center}
+  .gz .ph{visibility:hidden}
+  .gz .g{color:var(--gold)}
+  .gz .z{color:#efe4cd}
+  .jm{font-family:"Noto Serif TC",serif;font-size:clamp(26px,7vw,32px);line-height:1.1;
+    color:var(--dim);letter-spacing:.02em;justify-self:start}
+  /* 六格固定欄位：空亡 / 陰陽 / 五行 / 內旺 / 外旺 / 神煞（各列同欄對齊） */
+  .chips{min-width:0;display:grid;
+    grid-template-columns:44px 24px 30px 26px 40px minmax(0,1fr);
+    gap:5px;align-items:center;justify-items:center}
+  .cg{display:flex;flex-wrap:wrap;gap:4px;justify-content:center;min-width:0;justify-self:center}
+  .ssbox{display:flex;flex-wrap:wrap;gap:5px;justify-self:start;justify-content:flex-start;min-width:0}
+  .chip{font-size:11px;padding:1.5px 7px;border-radius:7px;border:1px solid var(--line2);
+    color:var(--muted);letter-spacing:.04em;white-space:nowrap}
+  .chip.wx{font-weight:600;border-color:transparent}
+  .wx-木{color:#0e1a14;background:var(--wx-mu)}
+  .wx-火{color:#1c0f0b;background:var(--wx-huo)}
+  .wx-土{color:#1a1508;background:var(--wx-tu)}
+  .wx-金{color:#14181c;background:var(--wx-jin)}
+  .wx-水{color:#08131c;background:var(--wx-shui)}
+  .chip.kong{color:#f0b7a8;border-color:#7a3a2c;background:rgba(200,80,60,.14)}
+  .chip.kongc{min-width:22px;text-align:center;letter-spacing:0}
+  .chip.kongc.off{visibility:hidden}
+  .chip.kongc.on{color:#f3bda9;border-color:#8a4030;background:rgba(200,80,60,.16);font-weight:600}
+  .chip.kongc.da{color:#f8b29b;border-color:#a44c34;background:rgba(214,74,52,.24)}
+  .chip.ws{min-width:22px;text-align:center}
+  .chip.ws.out{min-width:34px}
+  .chip.ws.in{color:#e7d3a6;border-color:rgba(217,178,106,.38)}
+  .chip.ws.out{color:#a9c4dd;border-color:rgba(110,150,195,.38)}
+  .chip.ws.hot{font-weight:700}
+  .chip.ws.in.hot{color:#ffe0a3;border-color:rgba(217,178,106,.8);background:rgba(217,178,106,.12)}
+  .chip.ws.out.hot{color:#cfe4f7;border-color:rgba(110,150,195,.8);background:rgba(110,150,195,.12)}
+  .chip.ss{color:#4e5661;border-style:dashed;border-color:rgba(90,100,112,.6);min-width:22px;text-align:center}
+  .chip.ss.on{color:#e2cea0;border-style:solid;border-color:rgba(217,178,106,.45);
+    background:rgba(217,178,106,.10);font-size:10px;padding:1px 5px;letter-spacing:0}
+  .ss-row{display:grid;grid-template-columns:1fr;gap:2px;padding:9px 0;border-bottom:1px dashed rgba(58,68,80,.45)}
+  .ss-row:last-child{border-bottom:none}
+  .ss-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .ss-t{font-family:"Noto Serif TC",serif;font-size:14px;color:#eed9a8;font-weight:600;letter-spacing:.06em}
+  .ss-at{font-size:11px;color:#0e1a14;background:linear-gradient(180deg,#e2c789,#c3a163);
+    padding:1px 7px;border-radius:6px;font-weight:700}
+  .ss-b{font-size:11.5px;color:#7b8694}
+  .ss-n{font-size:12px;color:var(--muted);line-height:1.65;margin-top:2px}
+  .ssref{margin-top:10px;border-top:1px dashed rgba(58,68,80,.5);padding-top:8px}
+  .ssref summary{cursor:pointer;font-size:12px;color:#c9a25c;letter-spacing:.06em;outline:none}
+  .ssref-b{margin-top:6px;display:grid;gap:4px}
+  .ssref-r{display:grid;grid-template-columns:64px 1fr;gap:8px;font-size:11.5px;line-height:1.6;color:#7b8694}
+  .ssref-r b{color:#d9c59a;font-weight:600;font-family:"Noto Serif TC",serif}
+
+  /* ── 24 節氣（起課時間卡標題列） ── */
+  .jqwrap{margin-left:auto;position:relative;flex:0 1 auto;min-width:0}
+  .jq-btn{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:9px;
+    border:1px solid rgba(217,178,106,.32);background:rgba(217,178,106,.06);color:#dcc9a0;
+    font-size:11.5px;letter-spacing:.03em;font-family:inherit;cursor:pointer;white-space:nowrap;
+    transition:background .15s,border-color .15s;max-width:100%}
+  .jq-btn:hover{background:rgba(217,178,106,.14);border-color:rgba(217,178,106,.5)}
+  .jq-btn .jq-n{color:#f0e3c4;font-family:"Noto Serif TC",serif;font-size:12.5px;font-weight:600;letter-spacing:.06em}
+  .jq-btn .jq-d{color:var(--dim);font-variant-numeric:tabular-nums}
+  .jq-btn .jq-ar{width:7px;height:7px;border-right:1.4px solid currentColor;border-bottom:1.4px solid currentColor;
+    transform:rotate(45deg) translateY(-2px);transition:transform .18s;opacity:.65;flex:0 0 auto}
+  .jqwrap.open .jq-ar{transform:rotate(-135deg) translateY(-1px)}
+  .jq-pop{position:absolute;right:0;top:calc(100% + 9px);z-index:70;width:396px;max-width:calc(100vw - 40px);
+    background:linear-gradient(180deg,#141b22,#0d1216);border:1px solid rgba(217,178,106,.3);
+    border-radius:14px;padding:12px 15px;box-shadow:0 26px 54px -20px #000;text-align:left}
+  .jq-pop-h{display:flex;align-items:baseline;gap:7px;font-size:11.5px;color:var(--muted);margin-bottom:9px;
+    padding-bottom:8px;border-bottom:1px solid rgba(58,68,80,.5)}
+  .jq-pop-h b{color:#e8d9b4;font-size:12.5px;font-family:"Noto Serif TC",serif;letter-spacing:.05em}
+  .jq-pop-h span{margin-left:auto;color:var(--dim);font-size:10.5px}
+  .jq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}
+  .jq-i{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 1px;border-radius:8px;
+    border:1px solid transparent;line-height:1.3}
+  .jq-i b{font-size:12px;font-weight:600;color:#c8d2dd;font-family:"Noto Serif TC",serif}
+  .jq-i i{font-size:9.5px;font-style:normal;color:#6f7a88;font-variant-numeric:tabular-nums}
+  .jq-i.past{opacity:.42}
+  .jq-i.now{border-color:rgba(217,178,106,.65);background:rgba(217,178,106,.13)}
+  .jq-i.now b{color:#f2e2bb}
+  .jq-i.now i{color:#c9a25c}
+  .jq-i.qi:not(.now) b{color:#8e9dae}
+  .jq-i.jie b::after{content:"";display:inline-block;width:3px;height:3px;border-radius:50%;
+    background:#c9a25c;margin-left:4px;position:relative;top:-1px;opacity:.8}
+
+  .note{font-size:12.5px;color:var(--muted);line-height:1.7;margin-top:10px;
+    padding:10px 12px;border-left:2px solid var(--gold-d);background:rgba(217,178,106,.05);border-radius:0 10px 10px 0}
+  .note.warn{border-left-color:var(--cin);background:rgba(200,80,60,.07);color:#e3b6a9}
+  .note b{color:#f0e3c4;font-weight:600}
+
+  .rel-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .rel-list .chip{border-color:rgba(217,178,106,.3);color:#dcc9a0}
+
+  .lbl-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;padding:7px 0;
+    border-bottom:1px dashed rgba(58,68,80,.45);color:var(--muted)}
+  .lbl-row:last-child{border-bottom:none}
+  .lbl-row b{color:#e8dcc2;font-weight:600;font-family:"Noto Serif TC",serif}
+  .ok{color:var(--jade)} .bad{color:#e0725a}
+
+  .two{display:grid;grid-template-columns:1fr;gap:10px}
+  @media(min-width:560px){.two{grid-template-columns:1fr 1fr}}
+
+  /* ---------- 口訣 ---------- */
+  .rule{font-size:13.5px;line-height:1.9}
+  .rule .kvline{display:flex;gap:8px;align-items:flex-start;margin:6px 0}
+  .rule .kvline .t{color:var(--gold);flex:0 0 auto;font-family:"Noto Serif TC",serif;min-width:3.6em}
+  .gstable{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+  .gstable div{background:#0d1115;border:1px solid rgba(58,68,80,.5);border-radius:9px;
+    padding:6px 4px;text-align:center;font-size:12.5px;font-family:"Noto Serif TC",serif}
+  .gstable div span{color:var(--gold-d);font-size:11px;margin-left:3px}
+  .scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  #jiang-table{min-width:660px}
+  table.tb{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.tb th,table.tb td{padding:6px 6px;border-bottom:1px solid rgba(58,68,80,.4);text-align:center;white-space:nowrap}
+  table.tb th{color:var(--dim);font-weight:500;font-size:11px;letter-spacing:.06em}
+  table.tb td{font-family:"Noto Serif TC",serif;color:#e2d7c0}
+
+  #tab-qi{padding-bottom:24px}
+  .hide{display:none!important}
+
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);opacity:0;pointer-events:none;
+    background:#e6c886;color:#1a1408;padding:9px 18px;border-radius:30px;font-size:13px;font-weight:600;
+    transition:.22s;z-index:99;box-shadow:0 12px 30px -12px #000}
+  #toast.on{opacity:1;transform:translate(-50%,0)}
+
+  /* ---------- 窄螢幕微調（須置於所有基礎樣式之後） ---------- */
+  @media(max-width:430px){
+    .ke-row{grid-template-columns:36px 44px 1fr;column-gap:6px}
+    .ke-main{grid-template-columns:46px minmax(0,1fr);grid-template-areas:"gz jm" "chips chips";row-gap:7px;column-gap:6px}
+    .ke-main>.gz{grid-area:gz}
+    .ke-main>.jm{grid-area:jm}
+    .ke-main>.chips{grid-area:chips;grid-template-columns:44px 26px 32px 26px 40px;justify-content:start;
+      gap:4px 5px;align-content:center}
+    .ke-main>.chips>.ssbox{grid-column:1/-1;justify-self:start;margin-top:3px}
+    .ssbox{gap:4px}
+    .chip{font-size:10px;padding:1px 4px}
+    .gz,.jm{font-size:22px}
+    .ke-mark{font-size:11px;min-width:32px}
+    .chip.ws.out{min-width:32px}
+    .chip.ss.on{letter-spacing:0}
+  }
+  @media(max-width:380px){
+    /* 極窄螢幕：改為流式排列，優先不溢出 */
+    .ke-main>.chips{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-start}
+    .ke-main>.chips>.cg{justify-self:auto}
+    .ke-main>.chips>.ssbox{width:100%;margin-top:2px}
+    .chip{font-size:9.5px;padding:1px 4px}
+    .chip.kongc,.chip.ws,.chip.yy{min-width:16px}
+  }
+  @media(max-width:430px){
+    .jq-btn{padding:3px 7px;font-size:10.5px;gap:4px}
+    .jq-btn .jq-n{font-size:11.5px}
+    .jq-btn .jq-d{font-size:10px}
+    .jq-pop{width:min(340px,calc(100vw - 34px));padding:10px 11px;right:-2px}
+    .jq-pop-h{font-size:11px;flex-wrap:wrap;gap:4px}
+    .jq-pop-h span{margin-left:0;width:100%}
+    .jq-grid{grid-template-columns:repeat(4,1fr);gap:4px}
+    .jq-i{padding:4px 0}
+    .jq-i b{font-size:11px}
+    .jq-i i{font-size:9px}
+  }
+
+  /* ================= 主題覆蓋層 ================= */
+  :root{
+    --bg:#100d0a; --bg2:#15110d; --panel:#1a1612; --panel2:#211c16;
+    --line:#2f2820; --line2:#41372c;
+    --gold:#e2b46e; --gold-d:#7d6238; --cin:#ff6b52; --jade:#3ec08c;
+    --text:#f5ecda; --muted:#a99f8e; --dim:#7d7466;
+    --wx-mu:#3ec08c; --wx-huo:#e8553c; --wx-tu:#d9a441; --wx-jin:#c8d3de; --wx-shui:#4ea8e8;
+    --t-field:#17130f; --t-gold2:#f1cd90; --t-goldink:#1a1208;
+    --t-text2:#ded3bf; --t-accent:rgba(226,180,110,.11); --t-accent2:rgba(226,180,110,.22);
+    --t-cardline:rgba(92,78,60,.55); --t-blue:#8b9df0; --t-blued:rgba(139,157,240,.42);
+  }
+  body{background:
+      radial-gradient(120% 60% at 50% -10%, rgba(46,36,26,.95) 0%, rgba(0,0,0,0) 62%),
+      linear-gradient(180deg,#100d0a 0%, #15110d 45%, #100d0a 100%);
+    color:var(--text)}
+  h1{color:#f5ecda}
+  .h-sub{color:#e2b46e}
+  nav.tabs{background:linear-gradient(180deg,#1a1612,#211c16);border-bottom-color:var(--line)}
+  nav.tabs button.on{color:#1a1208;background:linear-gradient(180deg,#f1cd90,#e2b46e);
+    border-color:#f1cd90;box-shadow:0 4px 18px -8px #000}
+  .card{background:linear-gradient(180deg,#1a1612 0%, #211c16 100%);
+    border-color:rgba(92,78,60,.55);box-shadow:0 18px 40px -32px rgba(0,0,0,.60)}
+  .c-no{color:#1a1208;background:linear-gradient(180deg,#f1cd90,#e2b46e)}
+  .c-title{color:#f5ecda}
+  input[type="number"],input[type="text"],input[type="datetime-local"],select,
+  .dtcell input,.dtcell select{background-color:#17130f!important;color:var(--text);border-color:var(--line)}
+  select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%237d7466' stroke-width='1.6'/></svg>")!important;
+    background-repeat:no-repeat!important;background-position:right 12px center!important}
+  .dtcell select{background-image:none!important}
+  .dtcell.sel::after{border-top-color:#7d7466}
+  .gz2 select:first-child{color:#f1cd90}
+  .seg button{background:#17130f;border-color:var(--line);color:var(--muted)}
+  .seg button.on{background:rgba(226,180,110,.11);border-color:#7d6238;color:#f1cd90;font-weight:600}
+  .btn-main{color:#1a1208;background:linear-gradient(180deg,#f1cd90,#e2b46e);
+    box-shadow:0 14px 34px -20px #000}
+  .btn-ghost{background:#17130f;border-color:var(--line);color:var(--muted)}
+  .btn-ghost:hover{border-color:#41372c;color:var(--text)}
+  .sz .col,.kv{background:#17130f;border-color:rgba(92,78,60,.55)}
+  .sz .g{color:#f5ecda}
+  .sz .z,.kv .v{color:#ded3bf}
+  .sz .col.dy .g,.sz .col.dy .z{color:#e2b46e}
+  .ke-row{background:linear-gradient(90deg,rgba(33,28,22,.92),rgba(24,20,16,.72));border-color:rgba(92,78,60,.55)}
+  .ke-row.used{border-color:#7d6238;
+    background:linear-gradient(90deg,rgba(226,180,110,.11),transparent)}
+  .ke-mark{color:#f1cd90}
+  .gz .z{color:#f5ecda}
+  .gz .g{color:#e2b46e}
+  .chip{color:#a99f8e;border-color:#41372c}
+  .wx-木{color:#17140f;background:#3ec08c}
+  .wx-火{color:#17140f;background:#e8553c}
+  .wx-土{color:#17140f;background:#d9a441}
+  .wx-金{color:#17140f;background:#c8d3de}
+  .wx-水{color:#17140f;background:#4ea8e8}
+  .chip.kong,.chip.kongc.on{color:#ff6b52;border-color:#ff6b52;background:rgba(200,80,60,.16)}
+  .chip.kongc.da{color:#ff6b52;border-color:#ff6b52;background:rgba(214,74,52,.24)}
+  .chip.yy-yang{color:#f1cd90;background:rgba(226,180,110,.11);border-color:#7d6238}
+  .chip.yy-yin{color:#8b9df0;background:rgba(110,150,195,.15);border-color:rgba(139,157,240,.42)}
+  .chip.ws.in{color:#f1cd90;border-color:#7d6238}
+  .chip.ws.out{color:#8b9df0;border-color:rgba(139,157,240,.42)}
+  .chip.ws.in.hot{color:#f1cd90;border-color:#e2b46e;background:rgba(226,180,110,.22)}
+  .chip.ws.out.hot{color:#8b9df0;border-color:#8b9df0;background:rgba(110,150,195,.15)}
+  .chip.ss{color:#7d7466;border-color:#41372c}
+  .chip.ss.on{color:#f1cd90;border-color:#7d6238;background:rgba(226,180,110,.11)}
+  .ss-row{border-bottom-color:rgba(92,78,60,.55)}
+  .ss-t{color:#f1cd90}
+  .ss-at{color:#1a1208;background:linear-gradient(180deg,#f1cd90,#e2b46e)}
+  .ss-b,.ssref-r{color:#7d7466}
+  .ssref summary{color:#e2b46e}
+  .ssref-r b{color:#f1cd90}
+  .ssref{border-top-color:rgba(92,78,60,.55)}
+  .jq-btn{border-color:#7d6238;background:rgba(226,180,110,.11);color:#f1cd90}
+  .jq-btn:hover{background:rgba(226,180,110,.22);border-color:#e2b46e}
+  .jq-btn .jq-n{color:#f1cd90}
+  .jq-pop{background:linear-gradient(180deg,#1a1612,#211c16);border-color:#7d6238;
+    box-shadow:0 26px 54px -20px rgba(0,0,0,.60)}
+  .jq-pop-h{border-bottom-color:rgba(92,78,60,.55)}
+  .jq-pop-h b{color:#f1cd90}
+  .jq-i b{color:#ded3bf}
+  .jq-i i{color:#7d7466}
+  .jq-i.now{border-color:#e2b46e;background:rgba(226,180,110,.22)}
+  .jq-i.now b{color:#f1cd90}
+  .jq-i.now i{color:#e2b46e}
+  .jq-i.qi:not(.now) b{color:#a99f8e}
+  .jq-i.jie b::after{background:#e2b46e}
+  .note{border-left-color:#7d6238;background:rgba(226,180,110,.11)}
+  .note b{color:#f1cd90}
+  .note.warn{border-left-color:#ff6b52;background:rgba(200,80,60,.16);color:#ff6b52}
+  .rel-list .chip{border-color:#7d6238;color:#f1cd90}
+  .lbl-row b{color:#ded3bf}
+  .lbl-row{border-bottom-color:rgba(92,78,60,.55)}
+  .ok{color:#3ec08c}.bad{color:#ff6b52}
+  .gstable div{background:#17130f;border-color:rgba(92,78,60,.55)}
+  .gstable div span{color:#7d6238}
+  table.tb th,table.tb td{border-bottom-color:rgba(92,78,60,.55)}
+  table.tb td{color:#ded3bf}
+  .sec-t{color:#e2b46e}
+  .sec-line{background:linear-gradient(90deg,transparent,#7d6238,transparent)}
+  #toast{background:#e2b46e;color:#1a1208;box-shadow:0 12px 30px -12px rgba(0,0,0,.60)}
+
+  /* ============ F 版面 · 黑體現代 ============ */
+  body{font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;letter-spacing:.03em}
+  header{padding:26px 0 4px;text-align:center}
+  h1{font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;font-size:clamp(26px,7vw,32px);font-weight:300;
+    letter-spacing:.42em;text-indent:.42em;color:#f5ecda;margin:4px 0 4px}
+  .h-sub{font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;font-size:15px;letter-spacing:.5em;text-indent:.5em;
+    color:#e2b46e;font-weight:400;margin-top:6px}
+  .h-rule{height:1px;margin:18px 0 0;opacity:.7}
+  nav.tabs{background:linear-gradient(180deg,#1a1612,#211c16);
+    border-bottom:1px solid #2f2820;padding:11px 16px}
+  nav.tabs button{border-radius:999px;font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;font-size:14px;
+    letter-spacing:.16em;text-indent:.16em;padding:10px 8px;border:1px solid #2f2820}
+  nav.tabs button.on{border-radius:999px;font-weight:600}
+  .card{border-radius:22px;box-shadow:0 22px 46px -32px rgba(0,0,0,.60);
+    padding:18px 18px 19px;margin:15px 0}
+  .c-no{border-radius:50%;width:23px;height:23px;flex:0 0 23px;font-size:12px}
+  .c-title{font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;font-size:15px;letter-spacing:.1em;font-weight:600}
+  .sec-t{font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;letter-spacing:.3em}
+  input[type="number"],input[type="text"],input[type="datetime-local"],select{
+    border-radius:13px;font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif}
+  .seg button{border-radius:13px}
+  .btn-ghost{border-radius:13px}
+  .btn-main{border-radius:16px;letter-spacing:.26em;text-indent:.26em;font-family:"PingFang TC","Microsoft JhengHei","微軟正黑體","Noto Sans TC","Heiti TC",system-ui,sans-serif;
+    font-size:15.5px;font-weight:600}
+  .sz .col,.kv{border-radius:16px}
+  .ke-row{border-radius:14px}
+  .chip{border-radius:8px}
+  .jq-btn{border-radius:999px}
+  .jq-pop{border-radius:18px}
+  .jq-i{border-radius:10px}
+  .note{border-radius:14px}
+  .ss-at{border-radius:8px}
+
+  /* ============ 語意配色層（F2）============ */
+  h1{color:#f6efdf}
+  .h-sub{color:#e9c184;font-size:16px;letter-spacing:.42em;text-indent:.42em}
+  .c-title{color:#f6efdf}
+  .c-note{color:#7d7466}
+  .sec-t{color:#e9c184}
+
+  /* 干支與神名：三者不同色，一眼分干／支／神 */
+  .gz .g{color:#e9c184}
+  .gz .z{color:#f6efdf}
+  .jm{color:#a8c4e0}
+  .sz .g{color:#e9c184}
+  .sz .z{color:#f6efdf}
+  .sz .col.dy .g,.sz .col.dy .z{color:#e9c184}
+  .kv .v{color:#ded3bf}
+  .kv .k{color:#7d7466}
+
+  /* 四位標籤：人元／貴神／將神／地分 各一色，與神煞卡來源標籤對應 */
+  .ke-lb{color:#7d7466;font-weight:600}
+  .ke-lb.lb-ren{color:#c39bf0}
+  .ke-lb.lb-shen{color:#7d9ce8}
+  .ke-lb.lb-jiang{color:#3fc48e}
+  .ke-lb.lb-fang{color:#d9a441}
+  .ke-mark{color:#e9c184}
+  .ke-row.used{border-color:rgba(226,180,110,.55);
+    background:linear-gradient(90deg,rgba(226,180,110,.10),rgba(226,180,110,.02))}
+
+  /* 空亡：日旬空＝朱、大空亡＝洋紅；兩者用不同形狀再補一層辨識 */
+  .chip.kong,.chip.kongc.on{color:#ff6b52;border-color:rgba(255,107,82,.75);
+    background:rgba(255,107,82,.14);border-radius:5px}
+  .chip.kongc.da{color:#e07ac0;border-color:rgba(224,122,192,.75);
+    background:rgba(224,122,192,.14);border-radius:99px}
+
+  /* 陰陽：＋金 −冷灰藍 */
+  .chip.yy{font-weight:700;border-radius:50%;width:16px;padding:0;text-align:center}
+  .chip.yy-yang{color:#e9c184;background:rgba(233,193,132,.14);border-color:rgba(233,193,132,.55)}
+  .chip.yy-yin{color:#8fa2ba;background:rgba(143,162,186,.12);border-color:rgba(143,162,186,.5)}
+
+  /* 內／外旺衰：青瓷 vs 亮靛，外再加虛線邊 */
+  .chip.ws{border-radius:5px}
+  .chip.ws.in{color:#5cc8b8;border-color:rgba(92,200,184,.6);background:rgba(92,200,184,.10)}
+  .chip.ws.in.hot{color:#0e1a17;background:#5cc8b8;border-color:#5cc8b8;font-weight:700}
+  .chip.ws.out{color:#8b9df0;border-color:rgba(139,157,240,.55);border-style:dashed}
+  .chip.ws.out.hot{color:#0e1020;background:#8b9df0;border-color:#8b9df0;
+    border-style:solid;font-weight:700}
+
+  /* 神煞 chip：吉＝琥珀實感、凶＝灰紫低調 */
+  .chip.ss{border-radius:5px}
+  .chip.ss.on.ji{color:#e6ab60;border-color:rgba(230,171,96,.55);background:rgba(230,171,96,.12)}
+  .chip.ss.on.xiong{color:#ad8ecb;border-color:rgba(173,142,203,.45);background:rgba(173,142,203,.10)}
+
+  /* 神煞卡：吉凶分色 + 左側色條；來源標籤沿用四色 */
+  .ss-row.ji .ss-t{color:#e6ab60}
+  .ss-row.xiong .ss-t{color:#ad8ecb}
+  .ss-row{padding-left:10px;border-left:2px solid transparent}
+  .ss-row.ji{border-left-color:rgba(230,171,96,.55)}
+  .ss-row.xiong{border-left-color:rgba(173,142,203,.5)}
+  .ss-row.ji{border-bottom-color:rgba(230,171,96,.16)}
+  .ss-row.xiong{border-bottom-color:rgba(173,142,203,.14)}
+  .ss-at{color:#14100a;background:#e9c184}
+  .ss-at.at-ren{background:#c39bf0}
+  .ss-at.at-shen{background:#7d9ce8}
+  .ss-at.at-jiang{background:#3fc48e}
+  .ss-at.at-fang{background:#d9a441}
+  .ss-at.at-pil{background:#8d8478;color:#f3ece0}
+  .ss-b{color:#7d7466}
+  .ss-n{color:#a99f8e}
+
+  /* 課中關係：生／克 語意色 */
+  .ok{color:#3fc48e}
+  .bad{color:#ff6b52}
+
+  /* ============ 手機／小平板課式：干支兩欄 + chips 六欄（≤560px）============
+     （481–560px 桌面六格定寬會擠爆神煞欄，故一律走本版面） */
+  @media(max-width:560px){
+    html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+    /* 左欄（標記＋標籤）固定寬，內容區固定起始點 */
+    .ke-row{grid-template-columns:52px minmax(0,1fr);
+      grid-template-areas:"mk main" "lb main";
+      grid-template-rows:min-content min-content;align-content:center;
+      row-gap:0;column-gap:8px;padding:10px 11px;align-items:center}
+    /* 全角括號「（」的左半是空白，墨跡落在字的右側。
+       10px 字級下量到留白約 0.64em，扣掉 -.6em 後括號墨跡才與下面的標籤同一條左邊界 */
+    .ke-mark{grid-area:mk;font-size:10px;line-height:1.25;text-align:left;
+      text-indent:-.6em;min-width:0;white-space:normal;letter-spacing:-.02em;
+      align-self:end}
+    .ke-lb{text-indent:0}
+    .ke-mark span{display:inline}
+    .ke-lb{grid-area:lb;font-size:12.5px;line-height:1.3;text-align:left;
+      letter-spacing:.04em;align-self:start}
+
+    .ke-main{grid-area:main;display:flex;flex-wrap:wrap;align-items:center;
+      gap:6px 8px;min-width:0}
+
+    /* ① 干支：固定兩欄。天干永遠第一欄、地支永遠第二欄；
+       單干留第二欄空位、單支留第一欄空位 → 兩欄各自對齊 */
+    .ke-main>.gz{grid-column:auto;justify-self:auto;flex:0 0 auto;
+      display:grid;grid-template-columns:1.06em 1.06em;
+      font-size:23px;line-height:1.2;letter-spacing:0;white-space:nowrap}
+    .ke-main>.gz>.ph{display:block;visibility:hidden}
+    .ke-main>.gz>span{text-align:center}
+
+    .ke-main>.jm{grid-column:auto;justify-self:auto;flex:0 0 auto;
+      font-size:18.5px;line-height:1.2}
+
+    /* ② chips：固定六欄，缺項留白（第六欄吃掉剩餘寬度，供神煞換行） */
+    .ke-main>.chips{grid-column:auto;flex:0 0 100%;display:grid;
+      grid-template-columns:56px 22px 28px 26px 42px minmax(0,1fr);
+      gap:4px;align-items:center;justify-items:center;justify-content:start}
+    .ke-main>.chips>.cg{display:flex;flex-wrap:wrap;gap:2px 3px;
+      justify-content:center;align-content:center;min-width:0}
+    .ke-main>.chips>.ssbox{grid-column:1/-1;justify-self:stretch;
+      display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-start;margin-top:3px}
+
+    .chip.yy{min-width:20px}
+    .chip.wx{min-width:26px}
+    .chip.ws{min-width:24px}
+    .chip.ws.out{min-width:40px}
+    .ke-main>.chips>.cg .chip.kongc{min-width:0}
+  }
+
+  /* 窄螢幕（≤380px）：欄寬縮小但仍維持固定六欄——
+     不用 flex 回流，四行同一類永遠同一條垂直線 */
+  @media(max-width:380px){
+    .ke-main>.chips{display:grid;
+      grid-template-columns:40px 18px 24px 22px 34px minmax(0,1fr);gap:4px}
+    .ke-main>.chips>.ssbox{grid-column:1/-1;justify-self:stretch;
+      display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-start;margin-top:3px}
+    .chip{font-size:9.5px;padding:1px 4px}
+    .chip.yy{min-width:16px}
+    .chip.wx{min-width:22px}
+    .chip.ws{min-width:20px}
+    .chip.ws.out{min-width:32px}
+    .ke-main>.chips>.cg .chip.kongc{min-width:0}
+  }
+</style>
+<meta name="description" content="金口訣七步起課：定四柱、取地分、定月將、定貴神、定將神、定人元、定用爻；含旬空、四大空亡、內外旺衰、30 種神煞與 24 節氣。">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="雲起時">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="雲起時 金口訣">
+<meta property="og:title" content="雲起時 金口訣">
+<meta property="og:description" content="金口訣七步起課，手機可直接使用：四柱、月將、貴神、將神、人元、用爻，含旬空、四大空亡、內外旺衰、30 種神煞與 24 節氣。">
+<meta property="og:image" content="https://hungpinoffice-afk.github.io/yunqi-jinkou/icon-512.png">
+<meta name="twitter:card" content="summary">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>雲起時</h1>
+    <div class="h-sub">金口訣</div>
+    <div class="h-rule"></div>
+  </header>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ 起課 ============ -->
+  <section id="tab-qi">
+    <div class="card">
+      <div class="c-head"><div class="c-no">1</div><div class="c-title">起課時間</div>
+        <div class="jqwrap" id="jieqi-live"></div></div>
+
+      <div class="tmrow">
+        <div class="tmcol">
+          <label class="fld" for="tmode-sel">輸入方式</label>
+          <select id="tmode-sel">
+            <option value="date">西曆輸入</option>
+            <option value="gz">四柱干支輸入</option>
+          </select>
+        </div>
+        <div class="tmcol">
+          <label class="fld" for="fang-sel">地分</label>
+          <select id="fang-sel"></select>
+        </div>
+      </div>
+      <div class="tmode-gap"></div>
+
+      <div id="tm-date">
+        <label class="fld">年 / 月 / 日 / 時 / 分（預設為現在時間，可個別調整）</label>
+        <div class="dtwrap">
+          <div class="dtgrid">
+            <div class="dtcell"><span class="dtlb">年</span>
+              <input type="number" id="d-y" inputmode="numeric" min="1900" max="2100" step="1" autocomplete="off"></div>
+            <div class="dtcell sel"><span class="dtlb">月</span><select id="d-m"></select></div>
+            <div class="dtcell sel"><span class="dtlb">日</span><select id="d-d"></select></div>
+            <div class="dtcell sel"><span class="dtlb">時</span><select id="d-h"></select></div>
+            <div class="dtcell sel"><span class="dtlb">分</span><select id="d-i"></select></div>
+          </div>
+          <button class="btn-ghost gold dtnow" id="btn-now">現在時間</button>
+        </div>
+      </div>
+
+      <div id="tm-gz" class="hide">
+        <label class="fld">干與支分別選擇（月干依五虎遁、時干依五鼠遁自動帶入，可手改）</label>
+        <div class="gzrow"><span class="gzlb">年柱</span>
+          <div class="gz2"><select id="sel-yg"></select><select id="sel-yz"></select></div></div>
+        <div class="gzrow"><span class="gzlb">月柱</span>
+          <div class="gz2"><select id="sel-mg"></select><select id="sel-mz"></select></div></div>
+        <div class="gzrow"><span class="gzlb">日柱</span>
+          <div class="gz2"><select id="sel-dg"></select><select id="sel-dz"></select></div></div>
+        <div class="gzrow"><span class="gzlb">時柱</span>
+          <div class="gz2"><select id="sel-hg"></select><select id="sel-h"></select></div></div>
+        <div class="note" id="gz-hint" style="margin-top:8px"></div>
+        <div class="row gap">
+          <button class="btn-ghost" id="btn-gz-now">用此刻四柱</button>
+          <span style="font-size:11.5px;color:var(--dim)">干支輸入時節氣依年柱推算；晝夜依時支（卯～申為晝）。</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="c-head"><div class="c-no">2</div><div class="c-title">晝夜貴人</div><div class="c-note">卯時起為晝，酉時起為夜</div></div>
+      <div class="seg" id="seg-dn">
+        <button data-d="auto" class="on">自動（05:00–17:00 晝）</button>
+        <button data-d="day">用晝貴</button>
+        <button data-d="night">用夜貴</button>
+      </div>
+    </div>
+
+    <button class="btn-main" id="btn-qi">起　課</button>
+
+    <div class="sec-head" id="sec-pan"><span class="sec-line"></span><span class="sec-t">課　盤</span><span class="sec-line"></span></div>
+
+    <div id="pan-empty" class="card hide" style="text-align:center;color:var(--dim);padding:30px 16px">
+      按下「起課」即在此處排出課盤。
+    </div>
+    <div id="pan-body" class="hide"></div>
+  </section>
+</div>
+
+<div id="toast"></div>
+
+<script>
+/* 金口訣 起課 推算核心 —— 依《補遺·詳論起課》影片規則實作 */
+(function (root) {
+  'use strict';
+
+  var GAN = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'];
+  var ZHI = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'];
+  var GAN_WX = ['木', '木', '火', '火', '土', '土', '金', '金', '水', '水'];
+  var ZHI_WX = ['水', '土', '木', '木', '土', '火', '火', '土', '金', '金', '土', '水'];
+
+  // 十二貴神（順序必須記憶：貴螣朱六勾青空白常玄陰后）
+  var GS = [
+    { n: '貴人', z: '丑' }, { n: '螣蛇', z: '巳' }, { n: '朱雀', z: '午' }, { n: '六合', z: '卯' },
+    { n: '勾陳', z: '辰' }, { n: '青龍', z: '寅' }, { n: '天空', z: '戌' }, { n: '白虎', z: '申' },
+    { n: '太常', z: '未' }, { n: '玄武', z: '子' }, { n: '太陰', z: '酉' }, { n: '天后', z: '亥' }
+  ];
+
+  // 十二月將名（將神別名，取象用）
+  var JIANG_NAME = {
+    '子': '神后', '丑': '大吉', '寅': '功曹', '卯': '太沖', '辰': '天罡', '巳': '太乙',
+    '午': '勝光', '未': '小吉', '申': '傳送', '酉': '從魁', '戌': '河魁', '亥': '登明'
+  };
+
+  var SHENG = { '木': '火', '火': '土', '土': '金', '金': '水', '水': '木' };
+  var KE = { '木': '土', '土': '水', '水': '火', '火': '金', '金': '木' };
+
+  var JIEQI_NAME = ['立春', '雨水', '驚蟄', '春分', '清明', '穀雨', '立夏', '小滿', '芒種', '夏至', '小暑', '大暑',
+    '立秋', '處暑', '白露', '秋分', '寒露', '霜降', '立冬', '小雪', '大雪', '冬至', '小寒', '大寒'];
+  // 立春 = 315°，每 15° 一個節氣
+  function jieqiNameByLon(lon) {
+    var k = Math.round(norm360(lon - 315) / 15) % 24;
+    return JIEQI_NAME[k];
+  }
+
+  var D2R = Math.PI / 180;
+  function norm360(x) { x = x % 360; return x < 0 ? x + 360 : x; }
+  function jdFromDate(d) { return d.getTime() / 86400000 + 2440587.5; }
+  function dateFromJd(jd) { return new Date((jd - 2440587.5) * 86400000); }
+
+  function solarLongitude(jd) {
+    var T = (jd - 2451545.0) / 36525;
+    var L0 = norm360(280.46646 + 36000.76983 * T + 0.0003032 * T * T);
+    var M = norm360(357.52911 + 35999.05029 * T - 0.0001537 * T * T);
+    var C = (1.914602 - 0.004817 * T - 0.000014 * T * T) * Math.sin(M * D2R)
+      + (0.019993 - 0.000101 * T) * Math.sin(2 * M * D2R)
+      + 0.000289 * Math.sin(3 * M * D2R);
+    var omega = 125.04 - 1934.136 * T;
+    return norm360(L0 + C - 0.00569 - 0.00478 * Math.sin(omega * D2R));
+  }
+
+  function angleDiff(a, b) { var d = norm360(a - b); return d > 180 ? d - 360 : d; }
+
+  // 求太陽黃經到達 targetDeg 的時刻（approx 為近似日期）
+  function findTerm(targetDeg, approxDate) {
+    var jd = jdFromDate(approxDate);
+    var lo = jd - 9, hi = jd + 9, guard = 0;
+    var flo = angleDiff(solarLongitude(lo), targetDeg);
+    var fhi = angleDiff(solarLongitude(hi), targetDeg);
+    while (flo * fhi > 0 && guard++ < 8) {
+      lo -= 15; hi += 15;
+      flo = angleDiff(solarLongitude(lo), targetDeg);
+      fhi = angleDiff(solarLongitude(hi), targetDeg);
+    }
+    for (var i = 0; i < 64; i++) {
+      var mid = (lo + hi) / 2;
+      var f = angleDiff(solarLongitude(mid), targetDeg);
+      if (f < 0) lo = mid; else hi = mid;
+    }
+    return dateFromJd((lo + hi) / 2);
+  }
+
+  function jdnFromYMD(y, m, d) {
+    var a = Math.floor((14 - m) / 12), yy = y + 4800 - a, mm = m + 12 * a - 3;
+    return d + Math.floor((153 * mm + 2) / 5) + 365 * yy + Math.floor(yy / 4)
+      - Math.floor(yy / 100) + Math.floor(yy / 400) - 32045;
+  }
+
+  // 日柱：以 1900-01-01 甲戌日為基準；23:00 起算次日（子時換日）
+  function dayGZIndex(dt) {
+    var y = dt.getFullYear(), m = dt.getMonth() + 1, d = dt.getDate();
+    if (dt.getHours() >= 23) {
+      var t = new Date(dt.getTime() + 86400000);
+      y = t.getFullYear(); m = t.getMonth() + 1; d = t.getDate();
+    }
+    var jdn = jdnFromYMD(y, m, d);
+    return ((jdn + 49) % 60 + 60) % 60;
+  }
+
+  function hourZhiIndex(h) { return Math.floor(((h + 1) % 24) / 2); }
+
+  // 五子元遁：由日干起子時之干，順數至某地支
+  function dunGan(dayGanIdx, zhiIdx) { return GAN[((dayGanIdx % 5) * 2 + zhiIdx) % 10]; }
+
+  function wxOfGan(g) { return GAN_WX[GAN.indexOf(g)]; }
+  function wxOfZhi(z) { return ZHI_WX[ZHI.indexOf(z)]; }
+  function isYangZhi(z) { return ZHI.indexOf(z) % 2 === 0; }
+  function isYangGan(g) { return GAN.indexOf(g) % 2 === 0; }
+
+  function wangShuai(wx, monthWx) {
+    if (wx === monthWx) return '旺';
+    if (SHENG[monthWx] === wx) return '相';
+    if (SHENG[wx] === monthWx) return '休';
+    if (KE[wx] === monthWx) return '囚';
+    return '死';
+  }
+
+  function relation(a, b) {
+    if (a === b) return { k: '比和', s: '同類比和' };
+    if (SHENG[a] === b) return { k: '生', s: a + '生' + b };
+    if (SHENG[b] === a) return { k: '被生', s: b + '生' + a };
+    if (KE[a] === b) return { k: '克', s: a + '克' + b };
+    return { k: '被克', s: b + '克' + a };
+  }
+
+  /** 五鼠遁：依日干支索引與時支求時干索引 */
+  function hourGanByDay(dayIdx, hourZhiIdx) {
+    return ((((dayIdx % 60) + 60) % 60 % 5) * 2 + hourZhiIdx) % 10;
+  }
+
+  /** 五虎遁：依年干支索引與月支求月干索引 */
+  function monthGanByYear(yearIdx, monthZhiIdx) {
+    var mk = (monthZhiIdx - 2 + 12) % 12;
+    var off = { 0: 2, 5: 2, 1: 4, 6: 4, 2: 6, 7: 6, 3: 8, 8: 8, 4: 0, 9: 0 }[(((yearIdx % 60) + 60) % 60) % 10];
+    return (off + mk) % 10;
+  }
+
+  // 月將 = 月建六合（子丑、寅亥、卯戌、辰酉、巳申、午未）
+  function jiangFromMonth(monthIdx) { return monthIdx <= 1 ? 1 - monthIdx : 13 - monthIdx; }
+
+  // 旬空
+  function xunKong(dayIdx) {
+    var head = dayIdx - (dayIdx % 10);
+    var zhiOfHead = head % 12;
+    return [ZHI[(zhiOfHead + 10) % 12], ZHI[(zhiOfHead + 11) % 12]];
+  }
+
+  // 旬名（甲子、甲戌、甲申、甲午、甲辰、甲寅）
+  function xunName(dayIdx) {
+    var head = dayIdx - (dayIdx % 10);
+    return GAN[head % 10] + ZHI[head % 12];
+  }
+
+  // 四大空亡：子午旬無水、寅申旬無金；甲辰／甲戌二旬無四大空亡
+  function fourVoidWx(dayIdx) {
+    var n = xunName(dayIdx);
+    if (n === '甲子' || n === '甲午') return '水';
+    if (n === '甲寅' || n === '甲申') return '金';
+    return null;
+  }
+
+  // 內旺衰：旺神由課內四位自定（多者為旺 → 受生無克者為旺 → 克他者為旺）
+  function innerWangWx(four) {
+    var wxs = four.map(function (p) { return p.wx; });
+    var cnt = {};
+    wxs.forEach(function (w) { cnt[w] = (cnt[w] || 0) + 1; });
+    var keys = Object.keys(cnt);
+    // 1. 多者為旺（含反克課：三爻同氣者旺）
+    for (var i = 0; i < keys.length; i++) {
+      if (cnt[keys[i]] >= 3) return { wx: keys[i], why: '課內' + keys[i] + '氣獨多，多者為旺' };
+    }
+    // 2. 受生者為旺（取受生且不被克者，其受生來源多者優先）
+    var bornIdx = [];
+    wxs.forEach(function (w, j) {
+      var isBorn = wxs.some(function (w2, k) { return k !== j && SHENG[w2] === w; });
+      if (isBorn) bornIdx.push(j);
+    });
+    if (bornIdx.length) {
+      var free = bornIdx.filter(function (j) {
+        return !wxs.some(function (w, k) { return k !== j && KE[w] === wxs[j]; });
+      });
+      var pool = free.length ? free : bornIdx;
+      var best = pool[0], bestN = -1;
+      pool.forEach(function (j) {
+        var n = wxs.filter(function (w) { return SHENG[w] === wxs[j]; }).length;
+        if (n > bestN) { bestN = n; best = j; }
+      });
+      return { wx: wxs[best], why: '課內受生者為旺（' + wxs[best] + '受生）' };
+    }
+    // 3. 克他者為旺
+    var bestK = null, bestKN = 0;
+    wxs.forEach(function (w, j) {
+      var n = wxs.filter(function (w2, k) { return k !== j && KE[w] === w2; }).length;
+      if (n > bestKN) { bestKN = n; bestK = w; }
+    });
+    if (bestK) return { wx: bestK, why: '課內克他者為旺（' + bestK + '克他爻）' };
+    return { wx: null, why: '課內無生克可較，仍以月令論' };
+  }
+
+  // 貴人表：日干 → [晝貴支, 夜貴支]
+  var GUI_REN = {
+    '甲': ['丑', '未'], '戊': ['丑', '未'], '庚': ['丑', '未'],
+    '乙': ['子', '申'], '己': ['子', '申'],
+    '丙': ['亥', '酉'], '丁': ['亥', '酉'],
+    '壬': ['巳', '卯'], '癸': ['巳', '卯'],
+    '辛': ['午', '寅']
+  };
+
+  var LIU_HE = [[0, 1], [2, 11], [3, 10], [4, 9], [5, 8], [6, 7]];
+  var LIU_CHONG = [[0, 6], [1, 7], [2, 8], [3, 9], [4, 10], [5, 11]];
+  // 申子辰 水 / 亥卯未 木 / 寅午戌 火 / 巳酉丑 金
+  var SAN_HE = [
+    { z: [8, 0, 4], wx: '水' }, { z: [11, 3, 7], wx: '木' },
+    { z: [2, 6, 10], wx: '火' }, { z: [5, 9, 1], wx: '金' }
+  ];
+
+  function pairIn(list, i, j) {
+    for (var k = 0; k < list.length; k++) {
+      var a = list[k][0], b = list[k][1];
+      if ((a === i && b === j) || (a === j && b === i)) return true;
+    }
+    return false;
+  }
+
+  function fmtDate(d) {
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+  function fmtMD(d) {
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return (d.getMonth() + 1) + '/' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  /**
+   * 起課主函數
+   * opts: {
+   *   mode: 'date' | 'gz',
+   *   date: Date,                                  // mode='date'
+   *   gz: { y:0-59, mz:0-11, d:0-59, hz:0-11 },    // mode='gz' 直接指定四柱干支序
+   *   fangIdx: 0..11, dayNight: 'auto'|'day'|'night', jiangIdx: null|0..11
+   * }
+   */
+  function qiKe(opts) {
+    var gzMode = opts.mode === 'gz';
+    var dt = gzMode ? null : (opts.date instanceof Date ? opts.date : new Date(opts.date));
+    var fangIdx = ((opts.fangIdx % 12) + 12) % 12;
+
+    var yearIdx, monthIdx, mk, dayIdx, hourIdx, lon = null, jieStart = null, jieNext = null, monthStartLon = null;
+
+    var mgOverride = null, hgOverride = null;
+    if (gzMode) {
+      // ---- 直接以干支輸入 ----
+      yearIdx = ((opts.gz.y % 60) + 60) % 60;
+      monthIdx = ((opts.gz.mz % 12) + 12) % 12;
+      dayIdx = ((opts.gz.d % 60) + 60) % 60;
+      hourIdx = ((opts.gz.hz % 12) + 12) % 12;
+      mk = (monthIdx - 2 + 12) % 12;
+      if (opts.gz.mg !== null && opts.gz.mg !== undefined) mgOverride = ((opts.gz.mg % 10) + 10) % 10;
+      if (opts.gz.hg !== null && opts.gz.hg !== undefined) hgOverride = ((opts.gz.hg % 10) + 10) % 10;
+    } else {
+      // ---- 由西曆時間推算四柱 ----
+      lon = solarLongitude(jdFromDate(dt));
+      var liChun = findTerm(315, new Date(dt.getFullYear(), 1, 4, 12));
+      var yearForGZ = (dt >= liChun) ? dt.getFullYear() : dt.getFullYear() - 1;
+      yearIdx = ((yearForGZ - 4) % 60 + 60) % 60;
+
+      mk = Math.floor(norm360(lon - 315) / 30);      // 0 = 寅月
+      monthIdx = (2 + mk) % 12;
+      monthStartLon = norm360(315 + 30 * mk);
+
+      dayIdx = dayGZIndex(dt);
+      hourIdx = hourZhiIndex(dt.getHours());
+    }
+
+    var monthStemOffset = { 0: 2, 5: 2, 1: 4, 6: 4, 2: 6, 7: 6, 3: 8, 8: 8, 4: 0, 9: 0 }[yearIdx % 10];
+    var monthGanIdx = (mgOverride !== null) ? mgOverride : (monthStemOffset + mk) % 10;  // 五虎遁（可手動指定）
+    var hourGanIdx = (hgOverride !== null) ? hgOverride : ((dayIdx % 5) * 2 + hourIdx) % 10; // 五鼠遁（可手動指定）
+
+    var yearGan = GAN[yearIdx % 10], yearZhi = ZHI[yearIdx % 12];
+    var monthGan = GAN[monthGanIdx], monthZhi = ZHI[monthIdx];
+    var dayGan = GAN[dayIdx % 10], dayZhi = ZHI[dayIdx % 12];
+    var hourGan = GAN[hourGanIdx], hourZhi = ZHI[hourIdx];
+
+    // ---- 節氣區間（節 → 節）；干支輸入時改由年柱推年 ----
+    if (!gzMode) {
+      jieStart = findTerm(monthStartLon, dt);
+      jieNext = findTerm(norm360(monthStartLon + 30),
+        new Date(jieStart.getTime() + 30 * 86400000));
+    }
+
+    // ---- 月將（月建六合） ----
+    var jiangIdx = (opts.jiangIdx === null || opts.jiangIdx === undefined)
+      ? jiangFromMonth(monthIdx) : ((opts.jiangIdx % 12) + 12) % 12;
+
+    // ---- 將神：月將加時，順數至地分 ----
+    var jiangShenIdx = ((jiangIdx + fangIdx - hourIdx) % 12 + 12) % 12;
+
+    // ---- 晝夜 ----
+    var dayNight = opts.dayNight || 'auto';
+    var isDay;
+    if (dayNight === 'day') isDay = true;
+    else if (dayNight === 'night') isDay = false;
+    else if (gzMode) isDay = (hourIdx >= 3 && hourIdx <= 8);   // 卯～申為晝
+    else isDay = (dt.getHours() >= 5 && dt.getHours() < 17);
+
+    // ---- 貴神 ----
+    var gr = GUI_REN[dayGan];
+    var guiZhi = isDay ? gr[0] : gr[1];
+    var rev = (dayGan === '辛' || dayGan === '壬' || dayGan === '癸');   // 辛壬癸：晝逆夜順
+    var forward = (isDay ? !rev : rev);
+    var guiZhiIdx = ZHI.indexOf(guiZhi);
+    var offset = (((fangIdx - guiZhiIdx) * (forward ? 1 : -1)) % 12 + 12) % 12;
+    var gs = GS[offset];
+    var guiShenZhiIdx = ZHI.indexOf(gs.z);
+
+    // ---- 人元（日干五子元遁至地分） ----
+    var renYuan = dunGan(dayIdx % 10, fangIdx);
+
+    // ---- 四位 ----
+    var kong = xunKong(dayIdx);
+    var monthWx = ZHI_WX[monthIdx];
+
+    function pos(label, ganChar, zhiChar, extra) {
+      var wx = zhiChar ? wxOfZhi(zhiChar) : wxOfGan(ganChar);
+      var yang = zhiChar ? isYangZhi(zhiChar) : isYangGan(ganChar);
+      return {
+        label: label,
+        gan: ganChar || '',
+        zhi: zhiChar || '',
+        name: extra || '',
+        wx: wx,
+        yang: yang,
+        yy: yang ? '陽' : '陰',
+        ws: wangShuai(wx, monthWx),
+        kong: zhiChar ? kong.indexOf(zhiChar) >= 0 : false
+      };
+    }
+
+    var P = {
+      ren: pos('人元', renYuan, null, ''),
+      shen: pos('貴神', dunGan(dayIdx % 10, guiShenZhiIdx), gs.z, gs.n),
+      jiang: pos('將神', dunGan(dayIdx % 10, jiangShenIdx), ZHI[jiangShenIdx], JIANG_NAME[ZHI[jiangShenIdx]]),
+      fang: pos('地分', null, ZHI[fangIdx], '方')
+    };
+
+    // ---- 定用爻 ----
+    var four = [P.ren, P.shen, P.jiang, P.fang];
+    var yangCount = four.filter(function (p) { return p.yang; }).length;
+    var usedKey = 'jiang', usedReason = '';
+    if (yangCount === 3) {
+      usedKey = four.filter(function (p) { return !p.yang; })[0].label;
+      usedReason = '三陽一陰，用陰（' + usedKey + '）';
+    } else if (yangCount === 1) {
+      usedKey = four.filter(function (p) { return p.yang; })[0].label;
+      usedReason = '三陰一陽，用陽（' + usedKey + '）';
+    } else if (yangCount === 2) {
+      usedKey = '將神';
+      usedReason = '二陰二陽，用月將（將神）';
+    } else if (yangCount === 0) {
+      usedKey = '將神';
+      usedReason = '純陰反陽，當用月將（將神）';
+    } else {
+      usedKey = '貴神';
+      usedReason = '純陽反陰，用貴神';
+    }
+    var keyMap = { '人元': 'ren', '貴神': 'shen', '將神': 'jiang', '地分': 'fang' };
+    P.usedKey = keyMap[usedKey] || 'jiang';
+    four.forEach(function (p) { p.used = (p.label === usedKey); });
+    var usedWarn = '';
+    if (usedKey === '人元' || usedKey === '地分') {
+      usedWarn = '依口訣用爻只落於貴神、將神；本例獨陰／獨陽落於' + usedKey + '，流派多改取將神，請自參師承。';
+    }
+
+    // ---- 空亡（旬空／四大空亡）＋內外旺衰 ----
+    var fvWx = fourVoidWx(dayIdx);
+    var inner = innerWangWx(four);
+    four.forEach(function (p) {
+      p.kongXun = !!p.zhi && kong.indexOf(p.zhi) >= 0;
+      p.kongDa = !!fvWx && ((!!p.zhi && wxOfZhi(p.zhi) === fvWx) || (!!p.gan && wxOfGan(p.gan) === fvWx));
+      p.kongText = p.kongXun && p.kongDa ? '日旬空·大空亡' : (p.kongXun ? '日旬空' : (p.kongDa ? '大空亡' : '–'));
+      p.innerWs = inner.wx ? wangShuai(p.wx, inner.wx) : p.ws;
+      p.outerWs = p.ws;
+      p.shenSha = '';
+    });
+
+    // ---- 神煞 ----
+    var ssList = shenShaScan({
+      yG: yearGan, yZ: yearZhi, mG: monthGan, mZ: monthZhi,
+      dG: dayGan, dZ: dayZhi, hG: hourGan, hZ: hourZhi,
+      four: four
+    });
+    four.forEach(function (p) {
+      p.shenShaList = ssList.filter(function (s) { return s.at.indexOf(p.label) >= 0; })
+        .map(function (s) { return s.name; });
+      p.shenSha = p.shenShaList.join('·');
+    });
+
+    // ---- 課中關係 ----
+    var rels = [];
+    var pts = [
+      { t: '將神', i: jiangShenIdx }, { t: '貴神', i: guiShenZhiIdx }, { t: '地分', i: fangIdx },
+      { t: '月建', i: monthIdx }, { t: '日支', i: dayIdx % 12 }
+    ];
+    for (var a = 0; a < pts.length; a++) {
+      for (var b = a + 1; b < pts.length; b++) {
+        if (pairIn(LIU_HE, pts[a].i, pts[b].i)) rels.push(pts[a].t + ZHI[pts[a].i] + ' 合 ' + pts[b].t + ZHI[pts[b].i]);
+        if (pairIn(LIU_CHONG, pts[a].i, pts[b].i)) rels.push(pts[a].t + ZHI[pts[a].i] + ' 沖 ' + pts[b].t + ZHI[pts[b].i]);
+      }
+    }
+    for (var s = 0; s < SAN_HE.length; s++) {
+      var g3 = SAN_HE[s].z, hit = [];
+      pts.forEach(function (p) { if (g3.indexOf(p.i) >= 0 && hit.indexOf(ZHI[p.i]) < 0) hit.push(ZHI[p.i]); });
+      if (hit.length >= 2) rels.push('三合半合：' + hit.join('') + '（' + SAN_HE[s].wx + '局）');
+    }
+
+    // ---- 生克鏈 ----
+    var chain = [
+      { a: '人元', b: '貴神', r: relation(P.ren.wx, P.shen.wx) },
+      { a: '貴神', b: '將神', r: relation(P.shen.wx, P.jiang.wx) },
+      { a: '將神', b: '地分', r: relation(P.jiang.wx, P.fang.wx) },
+      { a: '人元', b: '地分', r: relation(P.ren.wx, P.fang.wx) }
+    ];
+
+    // ---- 主客（以將為我、貴神為客／事） ----
+    var zk = relation(P.jiang.wx, P.shen.wx);
+    var zkText = {
+      '生': '我生事：我付出、我求人，事在我手上但耗力。',
+      '被生': '事生我：得助得財，他人來就我，吉。',
+      '克': '我克事：事可成，需主動施力，終能拿下。',
+      '被克': '事克我：受阻受制，所求難成或反受其害。',
+      '比和': '同類比和：平順無傷，但主遲緩、易生內耗。'
+    }[zk.k];
+
+    var szText = yearGan + yearZhi + ' ' + monthGan + monthZhi + ' ' + dayGan + dayZhi + ' ' + hourGan + hourZhi;
+    return {
+      mode: gzMode ? 'gz' : 'date',
+      gzIn: gzMode ? { y: yearIdx, mz: monthIdx, d: dayIdx, hz: hourIdx, mg: monthGanIdx, hg: hourGanIdx } : null,
+      input: {
+        date: dt,
+        dateText: gzMode ? '干支輸入' : fmtDate(dt),
+        szText: szText,
+        fangIdx: fangIdx, dayNight: dayNight, isDay: isDay
+      },
+      solar: gzMode
+        ? { lon: null, jieqi: '—', jieStart: null, jieNext: null, jieText: '—（干支輸入，依年柱推算）' }
+        : { lon: lon, jieqi: jieqiNameByLon(lon), jieStart: jieStart, jieNext: jieNext,
+            jieText: jieqiNameByLon(monthStartLon) + ' ' + fmtMD(jieStart) + ' ～ ' + jieqiNameByLon(norm360(monthStartLon + 30)) + ' ' + fmtMD(jieNext) },
+      sizhu: {
+        year: { g: yearGan, z: yearZhi }, month: { g: monthGan, z: monthZhi },
+        day: { g: dayGan, z: dayZhi }, hour: { g: hourGan, z: hourZhi }
+      },
+      monthJian: monthZhi, monthWx: monthWx,
+      jiang: { idx: jiangIdx, zhi: ZHI[jiangIdx], name: JIANG_NAME[ZHI[jiangIdx]] },
+      gui: { zhi: guiZhi, day: isDay, forward: forward, name: gs.n, rev: rev },
+      pos: P, four: four,
+      used: { label: usedKey, reason: usedReason, warn: usedWarn },
+      kong: kong,
+      kongInfo: { xun: xunName(dayIdx), kong: kong, fvWx: fvWx, innerWx: inner.wx, innerWhy: inner.why },
+      shenSha: ssList,
+      relations: rels,
+      chain: chain,
+      zhuke: { rel: zk, text: zkText }
+    };
+  }
+
+  // ==================== 神煞 ====================
+  var LIU_HE_ZHI = { '子':'丑','丑':'子','寅':'亥','亥':'寅','卯':'戌','戌':'卯','辰':'酉','酉':'辰','巳':'申','申':'巳','午':'未','未':'午' };
+  var LIU_HE_GAN = { '甲':'己','己':'甲','乙':'庚','庚':'乙','丙':'辛','辛':'丙','丁':'壬','壬':'丁','戊':'癸','癸':'戊' };
+  var SEASON_OF  = { '寅':'春','卯':'春','辰':'春','巳':'夏','午':'夏','未':'夏','申':'秋','酉':'秋','戌':'秋','亥':'冬','子':'冬','丑':'冬' };
+  var SAN_HE_OF  = { '寅':'火','午':'火','戌':'火','申':'水','子':'水','辰':'水','巳':'金','酉':'金','丑':'金','亥':'木','卯':'木','未':'木' };
+
+  var SS_TAB = {
+    // 以月建查
+    tianDe:  { '寅':'丁','卯':'申','辰':'壬','巳':'辛','午':'亥','未':'甲','申':'癸','酉':'寅','戌':'丙','亥':'乙','子':'巳','丑':'庚' },
+    yueDe:   { '寅':'丙','午':'丙','戌':'丙','卯':'甲','未':'甲','亥':'甲','辰':'壬','申':'壬','子':'壬','巳':'庚','酉':'庚','丑':'庚' },
+    tianMa:  { '寅':'午','申':'午','卯':'申','酉':'申','辰':'戌','戌':'戌','巳':'子','亥':'子','午':'寅','子':'寅','未':'辰','丑':'辰' },
+    tianYi:  { '寅':'戌','卯':'亥','辰':'子','巳':'丑','午':'寅','未':'卯','申':'辰','酉':'巳','戌':'午','亥':'未','子':'申','丑':'酉' },
+    feiLian: { '寅':'戌','卯':'巳','辰':'午','巳':'未','午':'申','未':'酉','申':'辰','酉':'亥','戌':'子','亥':'丑','子':'寅','丑':'卯' },
+    // 以日支查
+    yiMa:    { '寅':'申','午':'申','戌':'申','申':'寅','子':'寅','辰':'寅','巳':'亥','酉':'亥','丑':'亥','亥':'巳','卯':'巳','未':'巳' },
+    jieSha:  { '寅':'亥','午':'亥','戌':'亥','申':'巳','子':'巳','辰':'巳','巳':'寅','酉':'寅','丑':'寅','亥':'申','卯':'申','未':'申' },
+    // 以季節查
+    tianXi:  { '春':'戌亥子','夏':'丑寅卯','秋':'辰巳午','冬':'未申酉' },
+    sangChe: { '春':'酉','夏':'子','秋':'卯','冬':'午' },
+    siQiu:   { '春':'丑','夏':'辰','秋':'未','冬':'戌' },
+    // 以日干查
+    wuGui:   { '甲':'巳午','己':'巳午','乙':'寅卯','庚':'寅卯','丙':'子丑','辛':'子丑','丁':'戌亥','壬':'戌亥','戊':'申酉','癸':'未申酉' },
+    jieMing: { '甲':'申酉','己':'申酉','乙':'午未','庚':'午未','丙':'辰巳','辛':'辰巳','丁':'寅卯','壬':'寅卯','戊':'子丑','癸':'子丑' },
+    // 以年干查
+    luDao:   { '甲':'卯','乙':'辰','丙':'午','丁':'未','戊':'午','己':'未','庚':'酉','辛':'戌','壬':'子','癸':'丑' }
+  };
+  var SS_NOTE = {
+    '天德':'解百禍之憂愁，逢凶化吉，轉危為安。',
+    '天德合':'主解百禍，吉慶之神，化凶解憂，利尊長貴人；逢沖破空亡則無力。',
+    '月德':'家內和睦、喜慶，遇危逢凶化吉。',
+    '月德合':'作用同月德，吉慶程度稍次。',
+    '天喜':'家內大喜、婚姻添丁、進財、宴會、升官、交友之喜。',
+    '天赦':'化一切災禍病災，官司可解，得貴人提拔，晴明之象。',
+    '驛馬':'主官、望事、出行遷移，迅速可得；亦主逃失難獲。',
+    '天馬':'主事快，宜速不宜遲，行人求事速成。',
+    '天醫':'占病有良醫可治，九死一生，危中轉安。',
+    '地醫':'問病安，逢死化生，九死一生。',
+    '六甲':'主喜慶合事、婚姻財帛、官職文書。',
+    '六丁':'主家宅不寧、驚恐虛驚、火光傷殘、多夢。',
+    '三奇':'利見大人，百事吉昌，求官得官、求財得財、貴人相助。',
+    '五鬼':'主道路凶禍，出行宜避五鬼日、時、方。',
+    '截命災煞':'主出行阻隔、求謀不成、事情遲延、病大凶。',
+    '劫煞':'主傷災凶災、爭鬥打鬥、他人謀害、生官司。',
+    '天羅地網':'主爭訟官事、道路阻隔、行人阻滯；沖破則先阻後順。',
+    '關隔鎖':'主阻隔不通、辦事難成；見斬關／毀隔／破鎖則轉為順利。',
+    '喪門':'主喪孝、憂愁、疾病大凶，家有外喪之事。',
+    '弔客':'主驚恐、灾患，問病大凶或死亡事。',
+    '病符':'主大病、灾病、灾禍、凶灾。',
+    '天盜':'主失竊、丟失財物，家中失財，失物難尋。',
+    '喪車':'主病灾、傷身之禍、車禍血光，喪車入課主病凶。',
+    '四丘':'主墳墓、喪事、爭訟、病死，不宜問病。',
+    '飛廉':'主事迅速，占行人立至，有驚駭或喜怒不測之事。',
+    '地煞':'主阻隔不通、行人不至、失物難尋、求財辦事不順。',
+    '滅門':'主遷移不利、嫁娶孕育多病、官事傷財有凶禍。',
+    '祿倒':'入課官事難成，問官者主失職權。',
+    '馬倒':'主百事不順、求事阻隔、病者大凶，不宜求官。',
+    '天鬼':'主有不測之災。'
+  };
+
+  // 依賴課式（四位上下）判定的神煞：關隔鎖
+  function scanGuanGe(four) {
+    var out = [];
+    function hasWx(p, wx) {
+      if (!p) return false;
+      if (p.zhi && wxOfZhi(p.zhi) === wx) return true;
+      if (p.gan && wxOfGan(p.gan) === wx) return true;
+      return false;
+    }
+    // 上者在上、下者在下：four[0] 人元最上，four[3] 地分最下
+    var pairs = [
+      { name:'關',   up:'寅', down:'酉', wx:'金', full:'斬關' },
+      { name:'隔',   up:'辰', down:'卯', wx:'木', full:'毀隔' },
+      { name:'鎖',   up:'申', down:'卯', wx:'火', full:'破鎖' }
+    ];
+    pairs.forEach(function (rule) {
+      for (var i = 0; i < four.length - 1; i++) {
+        if (four[i].zhi === rule.up && four[i + 1].zhi === rule.down) {
+          var broken = i > 0 && hasWx(four[i - 1], rule.wx);
+          out.push({
+            name: broken ? rule.full : '關隔鎖',
+            at: [four[i].label],
+            detail: rule.up + '上見' + rule.down + (broken ? '，其上再見' + rule.wx + '，成' + rule.full : '，成' + rule.name)
+          });
+        }
+      }
+    });
+    return out;
+  }
+
+  /*
+   * 神煞掃描
+   * env: { yG,yZ,mZ,dG,dZ,hG,hZ, four:[{label,gan,zhi,wx}] }
+   */
+  function shenShaScan(env) {
+    var out = [];
+    var mz = env.mZ, dz = env.dZ, dg = env.dG, yz = env.yZ, yg = env.yG;
+    var season = SEASON_OF[mz];
+    var pillars = [
+      { k: '年柱', g: env.yG, z: env.yZ }, { k: '月柱', g: env.mG, z: env.mZ },
+      { k: '日柱', g: env.dG, z: env.dZ }, { k: '時柱', g: env.hG, z: env.hZ }
+    ];
+    function shift(z, n) { return ZHI[((ZHI.indexOf(z) + n) % 12 + 12) % 12]; }
+    function push(o) { out.push(o); }
+
+    // 通用比對：type = 'zhi' | 'gan' | 'gz'
+    function want(name, basis, targets, type) {
+      targets = (type === 'gz') ? (targets ? [String(targets)] : []) : String(targets || '').split('').filter(Boolean);
+      if (!targets.length) return;
+      var at = [];
+      env.four.forEach(function (p) {
+        if (type === 'gan') { if (p.gan && targets.indexOf(p.gan) >= 0) at.push(p.label); }
+        else if (type === 'gz') { if (p.gan && p.zhi && targets.indexOf(p.gan + p.zhi) >= 0) at.push(p.label); }
+        else { if (p.zhi && targets.indexOf(p.zhi) >= 0) at.push(p.label); }
+      });
+      var pil = [];
+      if (type === 'gz') {
+        pillars.forEach(function (q) {
+          if (targets.indexOf(q.g + q.z) >= 0) pil.push(q.k);
+        });
+      }
+      if (at.length || pil.length) push({ name: name, basis: basis, at: at, pillar: pil, note: SS_NOTE[name] || '' });
+    }
+
+    // ---- 以月建查 ----
+    var td = SS_TAB.tianDe[mz];
+    want('天德', '月建' + mz, td, GAN.indexOf(td) >= 0 ? 'gan' : 'zhi');
+    if (td) {
+      var tdHe = LIU_HE_GAN[td] || LIU_HE_ZHI[td] || '';
+      want('天德合', '天德' + td + '之六合', tdHe, GAN.indexOf(tdHe) >= 0 ? 'gan' : 'zhi');
+    }
+    var yd = SS_TAB.yueDe[mz];
+    want('月德', '月建' + mz, yd, 'gan');
+    if (yd) want('月德合', '月德' + yd + '之六合', LIU_HE_GAN[yd], 'gan');
+
+    want('天喜', '季令' + season, SS_TAB.tianXi[season], 'zhi');
+    want('天馬', '月建' + mz, SS_TAB.tianMa[mz], 'zhi');
+    want('天醫', '月建' + mz, SS_TAB.tianYi[mz], 'zhi');
+    want('地醫', '天醫' + SS_TAB.tianYi[mz] + '之對沖', shift(SS_TAB.tianYi[mz], 6), 'zhi');
+    want('飛廉', '月建' + mz, SS_TAB.feiLian[mz], 'zhi');
+    var mm = (ZHI.indexOf(mz) % 2 === 0) ? shift(mz, 3) : shift(mz, -3); // 陽月後三、陰月前三
+    want('滅門', '月建' + mz + '（' + (ZHI.indexOf(mz) % 2 === 0 ? '陽月順三' : '陰月逆三') + '）', mm, 'zhi');
+
+    // ---- 以季節查 ----
+    want('天赦', '季令' + season, season === '春' ? '戊寅' : season === '夏' ? '甲午' : season === '秋' ? '戊申' : '甲子', 'gz');
+    want('喪車', '季令' + season, SS_TAB.sangChe[season], 'zhi');
+    want('四丘', '季令' + season, SS_TAB.siQiu[season], 'zhi');
+    want('天鬼', '季令' + season, SS_TAB.sangChe[season], 'zhi');
+
+    // ---- 以日支查 ----
+    want('驛馬', '日支' + dz, SS_TAB.yiMa[dz], 'zhi');
+    want('劫煞', '日支' + dz, SS_TAB.jieSha[dz], 'zhi');
+    want('地煞', '劫煞' + (SS_TAB.jieSha[dz] || '') + '順數五位', shift(SS_TAB.jieSha[dz], 5), 'zhi');
+    want('天羅地網', '日支' + dz + '前一辰為天羅、對沖為地網', shift(dz, 1) + shift(dz, 6), 'zhi');
+
+    // ---- 以日干查 ----
+    want('五鬼', '日干' + dg, SS_TAB.wuGui[dg], 'zhi');
+    want('截命災煞', '日干' + dg, SS_TAB.jieMing[dg], 'zhi');
+
+    // ---- 以年支／年干查 ----
+    want('喪門', '太歲' + yz + '前二辰', shift(yz, 2), 'zhi');
+    want('弔客', '太歲' + yz + '後二辰', shift(yz, -2), 'zhi');
+    want('病符', '太歲' + yz + '後一辰', shift(yz, -1), 'zhi');
+    want('祿倒', '年干' + yg, SS_TAB.luDao[yg], 'zhi');
+    var maDao = ({ '寅': '酉', '午': '酉', '戌': '酉', '申': '卯', '子': '卯', '辰': '卯', '巳': '子', '酉': '子', '丑': '子', '亥': '午', '卯': '午', '未': '午' })[yz];
+    want('馬倒', '年支' + yz, maDao, 'zhi');
+
+    // ---- 課內干支專論 ----
+    var gansInKe = [env.four[0].gan, env.four[1].gan, env.four[2].gan].filter(Boolean);
+    if (gansInKe.indexOf('甲') >= 0) {
+      var atJia = env.four.filter(function (p) { return p.gan === '甲' && (p.label === '人元' || p.label === '將神'); }).map(function (p) { return p.label; });
+      if (atJia.length) push({ name: '六甲', basis: '人元／將神干見甲', at: atJia, pillar: [], note: SS_NOTE['六甲'] });
+    }
+    if (gansInKe.indexOf('丁') >= 0) {
+      var atDing = env.four.filter(function (p) { return p.gan === '丁' && (p.label === '人元' || p.label === '將神'); }).map(function (p) { return p.label; });
+      if (atDing.length) push({ name: '六丁', basis: '人元／將神干見丁', at: atDing, pillar: [], note: SS_NOTE['六丁'] });
+    }
+
+    // 三奇：四柱＋人元／貴神／將神之干
+    var yangGanSet = pillars.map(function (p) { return p.g; }).concat(gansInKe);
+    var tris = [['甲', '戊', '庚', '天上三奇'], ['乙', '丙', '丁', '地上三奇'], ['壬', '癸', '辛', '人中三奇']];
+    tris.forEach(function (t) {
+      if (t.slice(0, 3).every(function (x) { return yangGanSet.indexOf(x) >= 0; })) {
+        var at = env.four.filter(function (p) { return p.gan && t.slice(0, 3).indexOf(p.gan) >= 0 && p.label !== '地分'; }).map(function (p) { return p.label; });
+        var pil = pillars.filter(function (q) { return t.slice(0, 3).indexOf(q.g) >= 0; }).map(function (q) { return q.k; });
+        push({ name: '三奇', basis: t[3] + '（' + t.slice(0, 3).join('') + '）齊見', at: at, pillar: pil, note: SS_NOTE['三奇'] });
+      }
+    });
+
+    // 天盜：課內見子，或貴神剋將神
+    var ziAt = env.four.filter(function (p) { return p.zhi === '子'; }).map(function (p) { return p.label; });
+    var shenKeJiang = relation(env.four[1].wx, env.four[2].wx).k === '克';
+    if (ziAt.length || shenKeJiang) {
+      push({ name: '天盜', basis: ziAt.length ? '課內見子' : '貴神剋將神', at: ziAt.length ? ziAt : ['貴神', '將神'], pillar: [], note: SS_NOTE['天盜'] });
+    }
+
+    // 關隔鎖（需課式上下位）
+    scanGuanGe(env.four).forEach(function (g) {
+      push({ name: g.name, basis: g.detail, at: g.at, pillar: [], note: SS_NOTE['關隔鎖'] });
+    });
+
+    return out;
+  }
+
+  // ==================== 24 節氣 ====================
+  // 立春 315° 起，每 15° 一節氣；近似日期僅作二分法起點
+  var JIEQI_APPROX = [
+    [2,4],[2,19],[3,6],[3,21],[4,5],[4,20],[5,6],[5,21],[6,6],[6,21],[7,7],[7,23],
+    [8,8],[8,23],[9,8],[9,23],[10,8],[10,23],[11,7],[11,22],[12,7],[12,22],[1,6],[1,20]
+  ];
+  // 指定西曆年（1/1～12/31）之 24 節氣，依時間排序
+  function jieqiYear(year) {
+    var out = [];
+    for (var i = 0; i < 24; i++) {
+      var ap = JIEQI_APPROX[i];
+      var dt = findTerm(norm360(315 + 15 * i), new Date(year, ap[0] - 1, ap[1], 12, 0, 0));
+      out.push({ name: JIEQI_NAME[i], deg: norm360(315 + 15 * i), date: dt, order: i });
+    }
+    out.sort(function (a, b) { return a.date - b.date; });
+    return out;
+  }
+  // 該時刻所處節氣；節（月建節氣，order 偶數）與氣分開回報
+  function jieqiAt(dt) {
+    var list = jieqiYear(dt.getFullYear());
+    var y = dt.getFullYear();
+    var wide = jieqiYear(y - 1).concat(list, jieqiYear(y + 1));
+    var cur = null, next = null, curJie = null, nextJie = null, curQi = null;
+    wide.forEach(function (it) {
+      var isJie = it.order % 2 === 0;
+      if (it.date <= dt) {
+        if (!cur || it.date > cur.date) cur = it;
+        if (isJie) { if (!curJie || it.date > curJie.date) curJie = it; }
+        else { if (!curQi || it.date > curQi.date) curQi = it; }
+      } else {
+        if (!next || it.date < next.date) next = it;
+        if (isJie && (!nextJie || it.date < nextJie.date)) nextJie = it;
+      }
+    });
+    return { cur: cur, next: next, jie: curJie, nextJie: nextJie, qi: curQi, list: list };
+  }
+
+  var api = {
+    GAN: GAN, ZHI: ZHI, GAN_WX: GAN_WX, ZHI_WX: ZHI_WX, GS: GS, JIANG_NAME: JIANG_NAME,
+    jieqiYear: jieqiYear, jieqiAt: jieqiAt, fmtMD: fmtMD, JIEQI_NAME: JIEQI_NAME,
+    qiKe: qiKe, solarLongitude: solarLongitude, jiangFromMonth: jiangFromMonth,
+    dunGan: dunGan, relation: relation, wangShuai: wangShuai, fmtDate: fmtDate,
+    xunKong: xunKong, xunName: xunName, fourVoidWx: fourVoidWx, innerWangWx: innerWangWx,
+    findTerm: findTerm, jieqiNameByLon: jieqiNameByLon, monthGanByYear: monthGanByYear, hourGanByDay: hourGanByDay,
+    shenShaScan: shenShaScan
+  };
+
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+  root.JK = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+(function(){
+  'use strict';
+  var GAN=JK.GAN, ZHI=JK.ZHI, GAN_WX=JK.GAN_WX, ZHI_WX=JK.ZHI_WX;
+  var FANG_LABEL=['北','北北東','東北','東','東南東','東南','南','南南西','西南','西','西北西','西北'];
+  var SHENG=['鼠','牛','虎','兔','龍','蛇','馬','羊','猴','雞','狗','豬'];
+  var HOUR_LABEL=['23–01','01–03','03–05','05–07','07–09','09–11','11–13','13–15','15–17','17–19','19–21','21–23'];
+
+  var st={date:new Date(), fangIdx:(function(){var h=new Date().getHours();return Math.floor(((h+1)%24)/2);})(), mode:'hour', tmode:'date', dayNight:'auto', gz:{y:0,mz:0,d:0,hz:0}, result:null};
+
+  function $(s,r){return (r||document).querySelector(s);}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+  function pad(n){return (n<10?'0':'')+n;}
+  function toLocalInput(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())+'T'+pad(d.getHours())+':'+pad(d.getMinutes());}
+  function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('on');},1600);}
+
+  /* ---------- tabs ---------- */
+  $$('nav.tabs button').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('nav.tabs button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      ['qi','pan','rue'].forEach(function(k){$('#tab-'+k).classList.toggle('hide',k!==b.dataset.tab);});
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+  function goTab(k){
+    var el=(k==='pan')?$('#sec-pan'):null;
+    if(el&&el.scrollIntoView)el.scrollIntoView({behavior:'smooth',block:'start'});
+    else window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function curHourZhi(){
+    return st.tmode==='gz' ? st.gz.hz : Math.floor(((st.date.getHours()+1)%24)/2);
+  }
+  function fangIdxNow(){
+    return st.mode==='hour' ? curHourZhi() : st.fangIdx;
+  }
+  function syncFangUI(){
+    var hz=curHourZhi();
+    $('#fang-sel').querySelector('option[value="hour"]').textContent='當下時辰（'+ZHI[hz]+'）';
+    $('#fang-sel').value = (st.mode==='hour') ? 'hour' : String(st.fangIdx);
+  }
+
+  (function(){
+    $('#fang-sel').innerHTML='<option value="hour">當下時辰</option>'+
+      ZHI.map(function(z,i){ return '<option value="'+i+'">'+z+'（'+FANG_LABEL[i]+'）</option>'; }).join('');
+    $('#fang-sel').addEventListener('change',function(){
+      if(this.value==='hour'){ st.mode='hour'; st.fangIdx=curHourZhi(); }
+      else { st.mode='manual'; st.fangIdx=+this.value; }
+      syncFangUI();updateLive();
+    });
+  })();
+
+  /* ---------- 模式切換 ---------- */
+  $$('#seg-dn button').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#seg-dn button').forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');st.dayNight=b.dataset.d;updateLive();
+    });
+  });
+
+  /* ---------- 四柱來源：西曆 / 干支 ---------- */
+  function idx60(g,z){for(var i=0;i<60;i++){if(GAN[i%10]===g&&ZHI[i%12]===z)return i;}return 0;}
+  function gz60(i){return GAN[i%10]+ZHI[i%12];}
+
+  function hourZhiLabel(z){ return ZHI[z]; }
+  function stemOpts(){
+    var h='';
+    for(var i=0;i<10;i++)h+='<option value="'+i+'">'+GAN[i]+'</option>';
+    return h;
+  }
+  function zhiOptsFor(gi,label){
+    var h='';
+    for(var z=0;z<12;z++){
+      if(z%2===gi%2)h+='<option value="'+z+'">'+(label?label(z):ZHI[z])+'</option>';
+    }
+    return h;
+  }
+  function nearZhi(gi,zi){ return (zi%2===gi%2) ? zi : (zi+1)%12; }   /* 干支須同陰陽，不符時取相鄰支 */
+  function pairIdx(gi,zi){
+    for(var i=0;i<60;i++){ if(i%10===gi&&i%12===zi) return i; }
+    return null;
+  }
+  function fillGzPairs(){
+    ['#sel-yg','#sel-mg','#sel-dg','#sel-hg'].forEach(function(id){ $(id).innerHTML=stemOpts(); });
+  }
+  function setPair(gi,zi,gId,zId,label){
+    var z=nearZhi(gi,zi);
+    $(gId).value=gi;
+    $(zId).innerHTML=zhiOptsFor(gi,label);
+    $(zId).value=z;
+    return z;
+  }
+  function readGzSelects(){
+    var y=pairIdx(+$('#sel-yg').value,+$('#sel-yz').value);
+    var d=pairIdx(+$('#sel-dg').value,+$('#sel-dz').value);
+    if(y===null)y=0;
+    if(d===null)d=0;
+    st.gz={y:y, mg:+$('#sel-mg').value, mz:+$('#sel-mz').value,
+           d:d, hg:+$('#sel-hg').value, hz:+$('#sel-h').value};
+  }
+  function syncGzSelects(){
+    var g=st.gz||{};
+    var yIdx=(g.y===undefined||g.y===null)?0:g.y;
+    var dIdx=(g.d===undefined||g.d===null)?0:g.d;
+    var mz=(g.mz===undefined||g.mz===null)?0:g.mz;
+    var hz=(g.hz===undefined||g.hz===null)?0:g.hz;
+    var mg=(g.mg===undefined||g.mg===null)?JK.monthGanByYear(yIdx,mz):g.mg;
+    var hg=(g.hg===undefined||g.hg===null)?JK.hourGanByDay(dIdx,hz):g.hg;
+    setPair(yIdx%10,yIdx%12,'#sel-yg','#sel-yz');
+    setPair(mg,mz,'#sel-mg','#sel-mz');
+    setPair(dIdx%10,dIdx%12,'#sel-dg','#sel-dz');
+    setPair(hg,hz,'#sel-hg','#sel-h',hourZhiLabel);
+    readGzSelects();
+  }
+  function autoMonthGan(){
+    var y=pairIdx(+$('#sel-yg').value,+$('#sel-yz').value);
+    if(y===null)return;
+    var mz=+$('#sel-mz').value;
+    var mg=JK.monthGanByYear(y,mz);
+    if(mg===null||mg===undefined)return;
+    setPair(mg,mz,'#sel-mg','#sel-mz');
+  }
+  function autoHourGan(){
+    var d=pairIdx(+$('#sel-dg').value,+$('#sel-dz').value);
+    if(d===null)return;
+    var hz=+$('#sel-h').value;
+    setPair(JK.hourGanByDay(d,hz),hz,'#sel-hg','#sel-h',hourZhiLabel);
+  }
+
+  function parseDT(s){
+    s=(s||'').trim().replace(/[年月]/g,'-').replace(/日/g,' ').replace(/[.\/]/g,'-').replace(/T/,' ');
+    s=s.replace(/\s+/g,' ').trim();
+    var m;
+    if((m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:[ ](\d{1,2}):?(\d{1,2}))?$/))){
+      return new Date(+m[1],+m[2]-1,+m[3],+(m[4]||0),+(m[5]||0));
+    }
+    if((m=s.match(/^(\d{4})(\d{2})(\d{2})(?:[ ]?(\d{2})(\d{2}))?$/))){
+      return new Date(+m[1],+m[2]-1,+m[3],+(m[4]||0),+(m[5]||0));
+    }
+    if((m=s.match(/^(\d{1,2}):(\d{2})$/))){
+      var d=new Date();d.setHours(+m[1],+m[2],0,0);return d;
+    }
+    return null;
+  }
+
+  /* ---------- 年 / 月 / 日 / 時 / 分 個別輸入 ---------- */
+  function fillDtSelects(){
+    var a=[],i;
+    for(i=1;i<=12;i++)a.push('<option value="'+i+'">'+pad(i)+'</option>');
+    $('#d-m').innerHTML=a.join('');
+    a=[];for(i=0;i<24;i++)a.push('<option value="'+i+'">'+pad(i)+'</option>');
+    $('#d-h').innerHTML=a.join('');
+    a=[];for(i=0;i<60;i++)a.push('<option value="'+i+'">'+pad(i)+'</option>');
+    $('#d-i').innerHTML=a.join('');
+  }
+  function fillDays(keep){
+    var y=parseInt($('#d-y').value,10), mo=parseInt($('#d-m').value,10), i, a=[];
+    if(!(y>0)) y=new Date().getFullYear();
+    if(!(mo>=1&&mo<=12)) mo=1;
+    var n=new Date(y,mo,0).getDate();
+    var cur=keep||parseInt($('#d-d').value,10)||1;
+    for(i=1;i<=n;i++)a.push('<option value="'+i+'">'+pad(i)+'</option>');
+    $('#d-d').innerHTML=a.join('');
+    $('#d-d').value=Math.min(cur,n);
+    return n;
+  }
+  function dtText(d){
+    var zi=Math.floor(((d.getHours()+1)%24)/2);
+    return d.getFullYear()+'/'+pad(d.getMonth()+1)+'/'+pad(d.getDate())+' '+pad(d.getHours())+':'+pad(d.getMinutes())+'（'+ZHI[zi]+'時）';
+  }
+  function syncDtFields(d){
+    $('#d-y').value=d.getFullYear();
+    $('#d-m').value=d.getMonth()+1;
+    fillDays(d.getDate());
+    $('#d-d').value=d.getDate();
+    $('#d-h').value=d.getHours();
+    $('#d-i').value=d.getMinutes();
+  }
+  function readDtFields(){
+    var y=parseInt($('#d-y').value,10), mo=parseInt($('#d-m').value,10),
+        da=parseInt($('#d-d').value,10), hh=parseInt($('#d-h').value,10), mi=parseInt($('#d-i').value,10);
+    if(!(y>=1&&y<=9999))return null;
+    if(!(mo>=1&&mo<=12))return null;
+    if(!(da>=1&&da<=31))return null;
+    if(!(hh>=0&&hh<=23))return null;
+    if(!(mi>=0&&mi<=59))return null;
+    return new Date(y,mo-1,da,hh,mi,0,0);
+  }
+  function setDate(d,quiet){
+    st.date=d;
+    syncDtFields(d);
+    if(!quiet)updateLive();
+  }
+  function onDtChange(){
+    if(this.id==='d-y'||this.id==='d-m')fillDays();
+    var d=readDtFields();
+    if(!d)return;
+    st.date=d;
+    updateLive();
+  }
+  fillDtSelects();
+  setDate(new Date(),true);          /* 預設＝程式打開的即時時間 */
+  ['#d-y','#d-m','#d-d','#d-h','#d-i'].forEach(function(s){
+    $(s).addEventListener('change',onDtChange);
+    if(s==='#d-y')$(s).addEventListener('input',onDtChange);
+  });
+  $('#d-y').addEventListener('blur',function(){
+    var y=parseInt(this.value,10);
+    if(!(y>=1&&y<=9999)){ this.value=st.date.getFullYear(); fillDays(); }
+  });
+  $('#btn-now').addEventListener('click',function(){ setDate(new Date()); toast('已帶入現在時間'); });
+
+  /* ---------- 干支輸入（干／支 分開選） ---------- */
+  fillGzPairs();
+  function gzFromNow(){
+    var r=JK.qiKe({date:new Date(),fangIdx:st.fangIdx,dayNight:'auto',jiangIdx:null});
+    return { y:idx60(r.sizhu.year.g,r.sizhu.year.z), mz:ZHI.indexOf(r.sizhu.month.z),
+             mg:GAN.indexOf(r.sizhu.month.g),
+             d:idx60(r.sizhu.day.g,r.sizhu.day.z),
+             hg:GAN.indexOf(r.sizhu.hour.g), hz:ZHI.indexOf(r.sizhu.hour.z) };
+  }
+  st.gz=gzFromNow();
+  syncGzSelects();
+
+  $('#sel-yg').addEventListener('change',function(){
+    setPair(+$('#sel-yg').value,+$('#sel-yz').value,'#sel-yg','#sel-yz');
+    autoMonthGan(); readGzSelects(); updateLive();
+  });
+  $('#sel-yz').addEventListener('change',function(){
+    readGzSelects(); autoMonthGan(); readGzSelects(); updateLive();
+  });
+  $('#sel-mg').addEventListener('change',function(){
+    setPair(+$('#sel-mg').value,+$('#sel-mz').value,'#sel-mg','#sel-mz');
+    readGzSelects(); updateLive();
+  });
+  $('#sel-mz').addEventListener('change',function(){
+    autoMonthGan(); readGzSelects(); updateLive();
+  });
+  $('#sel-dg').addEventListener('change',function(){
+    setPair(+$('#sel-dg').value,+$('#sel-dz').value,'#sel-dg','#sel-dz');
+    autoHourGan(); readGzSelects(); updateLive();
+  });
+  $('#sel-dz').addEventListener('change',function(){
+    readGzSelects(); autoHourGan(); readGzSelects(); updateLive();
+  });
+  $('#sel-hg').addEventListener('change',function(){
+    setPair(+$('#sel-hg').value,+$('#sel-h').value,'#sel-hg','#sel-h',hourZhiLabel);
+    readGzSelects(); updateLive();
+  });
+  $('#sel-h').addEventListener('change',function(){
+    autoHourGan(); readGzSelects(); updateLive();
+  });
+  $('#btn-gz-now').addEventListener('click',function(){
+    st.gz=gzFromNow(); syncGzSelects(); updateLive(); toast('已帶入此刻四柱');
+  });
+
+  function setTimeMode(m){
+    st.tmode=m;
+    $('#tmode-sel').value=m;
+    $('#tm-date').classList.toggle('hide',m!=='date');
+    $('#tm-gz').classList.toggle('hide',m!=='gz');
+    if(m==='gz') syncGzSelects();
+  }
+  $('#tmode-sel').addEventListener('change',function(){ setTimeMode(this.value); updateLive(); });
+
+  function opts(){
+    var o = st.tmode==='gz' ? {mode:'gz',gz:st.gz} : {mode:'date',date:st.date};
+    o.fangIdx=fangIdxNow();o.dayNight=st.dayNight;o.jiangIdx=null;   /* 月將＝月建六合，自動推算 */
+    return o;
+  }
+  function compute(){ var r=JK.qiKe(opts()); r.fangSrc=st.mode; return r; }
+
+  /* ---------- 24 節氣面板（起課時間卡標題列） ---------- */
+  var jqOpen=false;
+  var JIE_OF_MONTH={'寅':'立春','卯':'驚蟄','辰':'清明','巳':'立夏','午':'芒種','未':'小暑',
+    '申':'立秋','酉':'白露','戌':'寒露','亥':'立冬','子':'大雪','丑':'小寒'};
+  // 由年柱干支（0＝甲子）推最接近基準年的西曆年
+  function yearFromGZ(yIdx,base){
+    var cand=4+yIdx+60*Math.floor((base-4-yIdx)/60),best=cand;
+    if(Math.abs(cand-60-base)<Math.abs(best-base)) best=cand-60;
+    if(Math.abs(cand+60-base)<Math.abs(best-base)) best=cand+60;
+    return best;
+  }
+  function nextJieAfter(jie,year){
+    var arr=JK.jieqiYear(year).concat(JK.jieqiYear(year+1)).filter(function(it){
+      return it.order%2===0 && it.date>jie.date;
+    });
+    return arr[0];
+  }
+  function jqInfo(r){
+    var gzMode=(r.mode==='gz'),year,list,jie,nextJie;
+    if(gzMode){
+      year=yearFromGZ(r.gzIn.y,new Date().getFullYear());
+      list=JK.jieqiYear(year);
+      var jn=JIE_OF_MONTH[r.monthJian]||'立春';
+      jie=list.filter(function(it){return it.name===jn;})[0]||list[0];
+      nextJie=nextJieAfter(jie,year);
+    }else{
+      var a=JK.jieqiAt(r.input.date);
+      year=r.input.date.getFullYear(); list=a.list; jie=a.jie; nextJie=a.nextJie;
+    }
+    return {gz:gzMode,year:year,list:list,jie:jie,nextJie:nextJie};
+  }
+  function renderJieqi(r){
+    var box=$('#jieqi-live'); if(!box) return;
+    var o=jqInfo(r), gzMode=o.gz, year=o.year, list=o.list, jie=o.jie, nextJie=o.nextJie;
+    var srcNote=gzMode?'依年柱推得 '+year+' 年，':'';
+    var head='<button class="jq-btn" id="jq-btn" type="button" aria-expanded="'+(jqOpen?'true':'false')+'" '+
+      'title="月建節氣 '+jie.name+'（'+JK.fmtMD(jie.date)+'）起，至 '+nextJie.name+'（'+JK.fmtMD(nextJie.date)+'）交節'+
+      (srcNote?'；'+srcNote.replace('，',''):'')+'；點擊查看 '+year+' 年 24 節氣">'+
+      '<span class="jq-n">'+jie.name+'</span>'+
+      '<span class="jq-d">→ '+nextJie.name+' '+JK.fmtMD(nextJie.date)+'</span>'+
+      '<span class="jq-ar"></span></button>';
+    var pop='<div class="jq-pop'+(jqOpen?'':' hide')+'" id="jq-pop">'+
+      '<div class="jq-pop-h"><b>'+year+'</b> 年 24 節氣<span>'+(gzMode?'依年柱推得 · ':'')+'框選＝月建所在節（起課用）</span></div>'+
+      '<div class="jq-grid">'+list.map(function(it){
+        var cls = it.date.getTime()===jie.date.getTime() ? 'now ' : (it.date<jie.date?'past ':'');
+        cls += (it.order%2===0 ? 'jie' : 'qi');
+        return '<div class="jq-i '+cls+'"><b>'+it.name+'</b><i>'+JK.fmtMD(it.date)+'</i></div>';
+      }).join('')+'</div></div>';
+    box.className='jqwrap'+(jqOpen?' open':'');
+    box.innerHTML=head+pop;
+    var btn=$('#jq-btn');
+    if(btn) btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      jqOpen=!jqOpen; renderJieqi(r);
+    });
+  }
+  document.addEventListener('click',function(e){
+    if(!jqOpen) return;
+    if(e.target && e.target.closest && e.target.closest('.jqwrap')) return;
+    jqOpen=false;
+    var p=$('#jq-pop'); if(p) p.classList.add('hide');
+    var w=$('#jieqi-live'); if(w) w.classList.remove('open');
+  });
+
+  function updateLive(){
+    var r=compute();
+    renderJieqi(r);
+    syncFangUI();
+    if(st.tmode==='gz'){
+      $('#gz-hint').innerHTML='自動推得：月柱 <b>'+r.sizhu.month.g+r.sizhu.month.z+'</b>　時柱 <b>'+r.sizhu.hour.g+r.sizhu.hour.z+
+        '</b>　→ 月建 <b>'+r.monthJian+'</b>，月將 <b>'+r.jiang.zhi+'</b>（'+r.jiang.name+'）'+
+        '　<span style="color:var(--dim)">時支 '+r.sizhu.hour.z+'＝'+HOUR_LABEL[ZHI.indexOf(r.sizhu.hour.z)]+'</span>';
+    }
+    return r;
+  }
+  syncFangUI(); updateLive();
+
+  /* ---------- 起課 ---------- */
+  $('#btn-qi').addEventListener('click',function(){
+    var r=compute();
+    st.result=r;renderPan(r);goTab('pan');
+  });
+
+  function chip(t,cls){return '<span class="chip '+(cls||'')+'">'+t+'</span>';}
+  function yyChip(o){return '<span class="chip yy '+(o.yang?'yy-yang':'yy-yin')+'" title="'+(o.yang?'陽':'陰')+'">'+(o.yang?'+':'−')+'</span>';}
+  function kongChip(o){
+    var s='';
+    if(o.kongXun) s+='<span class="chip kongc on" title="日旬空亡：本旬所空之支">日旬空</span>';
+    if(o.kongDa)  s+='<span class="chip kongc on da" title="四大空亡：本旬缺此五行，同五行干支並論">大空亡</span>';
+    return '<span class="cg">'+(s || '<span class="chip kongc off">–</span>')+'</span>';
+  }
+  function wsChip(v,k){
+    var tip = k==='in' ? '內旺衰：以課內四位自定旺神（多者／受生／克他）' : '外旺衰：以月令為我，同我者旺、我生者相、生我者休、克我者囚、我克者死';
+    var txt = (k==='out') ? '外'+v : v;
+    return '<span class="chip ws '+k+(v==='旺'?' hot':'')+'" title="'+tip+'">'+txt+'</span>';
+  }
+  // ---- 神煞吉凶（用於分色辨識；純標示，不影響判斷）----
+  var SS_JI = {'天德':1,'天德合':1,'月德':1,'月德合':1,'天喜':1,'天赦':1,
+    '驛馬':1,'天馬':1,'天醫':1,'地醫':1,'六甲':1,'六丁':1,'三奇':1};
+  function ssClass(n){ return SS_JI[n] ? 'ji' : 'xiong'; }
+  function posClass(lb){
+    return lb==='人元' ? 'ren' : lb==='貴神' ? 'shen' : lb==='將神' ? 'jiang' : 'fang';
+  }
+  function ssChip(o){
+    var l = o.shenShaList || [];
+    if(!l.length) return '<span class="ssbox"><span class="chip ss" title="本課未見所收神煞">—</span></span>';
+    return '<span class="ssbox">'+l.map(function(n){
+      return '<span class="chip ss on '+ssClass(n)+'" title="神煞：'+n+'">'+n+'</span>';
+    }).join('')+'</span>';
+  }
+
+  function renderPan(r){
+    $('#pan-empty').classList.add('hide');
+    var body=$('#pan-body');body.classList.remove('hide');
+    var p=r.pos;
+    var ki=r.kongInfo;
+    var order=[p.ren,p.shen,p.jiang,p.fang];
+    var keHTML=order.map(function(o){
+      /* 全部靠右對齊：單干／單支都擺在第二欄（地支欄），空位留在前面，
+         四行的干支右緣才會落在同一條直線上 */
+      var gz = (o.gan&&o.zhi)
+        ? '<span class="g">'+o.gan+'</span><span class="z">'+o.zhi+'</span>'
+        : (o.gan ? '<span class="ph"></span><span class="g">'+o.gan+'</span>'
+                 : '<span class="ph"></span><span class="z">'+o.zhi+'</span>');
+      var mk=[];
+      if(o.used) mk.push('（用）');
+      if(o.label==='地分') mk.push(r.fangSrc==='hour'?'（時辰）':'（自選）');
+      var mark = mk.length ? mk.map(function(t){return '<span>'+t+'</span>';}).join('')
+        : '<span class="off">（用）</span>';
+      return '<div class="ke-row'+(o.used?' used':'')+'">'+
+        '<span class="ke-mark">'+mark+'</span>'+
+        '<div class="ke-lb lb-'+posClass(o.label)+'">'+o.label+'</div>'+
+        '<div class="ke-main"><span class="gz">'+gz+'</span>'+
+          (o.name&&o.label!=='地分'?'<span class="jm">'+o.name+'</span>':'')+
+          '<span class="chips">'+kongChip(o)+yyChip(o)+chip(o.wx,'wx wx-'+o.wx)+
+            wsChip(o.innerWs,'in')+wsChip(o.outerWs,'out')+ssChip(o)+'</span></div></div>';
+    }).join('');
+
+    var sz=r.sizhu;
+    function col(k,g,z){return '<div class="col"><div class="k">'+k+'</div><div class="g">'+g+'</div><div class="z">'+z+'</div></div>';}
+
+    var chain=r.chain.map(function(c){
+      var cls=c.r.k==='比和'?'':( (c.r.k==='生'||c.r.k==='克')?'bad':'ok');
+      return '<div class="lbl-row"><span>'+c.a+' → '+c.b+'</span><b class="'+cls+'">'+c.r.k+'　<span style="color:var(--dim);font-weight:400">'+c.r.s+'</span></b></div>';
+    }).join('');
+
+    var rels=r.relations.length? r.relations.map(function(x){return chip(x);}).join('') : '<span style="color:var(--dim);font-size:12.5px">課中四支無明顯合沖</span>';
+
+    var ss=r.shenSha||[];
+    var SS_REF=[
+      ['天德','寅丁・卯申・辰壬・巳辛・午亥・未甲・申癸・酉寅・戌丙・亥乙・子巳・丑庚（月建）'],
+      ['天德合','天德之六合（干合／支合）'],
+      ['月德','寅午戌丙・亥卯未甲・申子辰壬・巳酉丑庚（月建）'],
+      ['月德合','月德之六合'],
+      ['天喜','春戌亥子・夏丑寅卯・秋辰巳午・冬未申酉（季節）'],
+      ['天赦','春戊寅・夏甲午・秋戊申・冬甲子（參日柱）'],
+      ['驛馬','寅午戌申・申子辰寅・巳酉丑亥・亥卯未巳（日支）'],
+      ['天馬','正七午・二八申・三九戌・四十子・五十一寅・六十二辰（月建）'],
+      ['天醫','寅戌・卯亥・辰子・巳丑・午寅・未卯・申辰・酉巳・戌午・亥未・子申・丑酉（月建）'],
+      ['地醫','天醫之對沖'],
+      ['六甲','人元／將神之干見甲'],
+      ['六丁','人元／將神之干見丁'],
+      ['三奇','甲戊庚／乙丙丁／壬癸辛三字齊見（四柱＋人元貴神將神干）'],
+      ['五鬼','甲己巳午・乙庚寅卯・丙辛子丑・丁壬戌亥・戊癸申酉（日干）'],
+      ['截命災煞','甲己申酉・乙庚午未・丙辛辰巳・丁壬寅卯・戊癸子丑（日干）'],
+      ['劫煞','寅午戌亥・亥卯未申・申子辰巳・巳酉丑寅（日支）'],
+      ['天羅地網','日支前一辰為天羅、對沖為地網'],
+      ['關隔鎖','寅在酉上為關、辰在卯上為隔、申在卯上為鎖；更上見金／木／火為斬關・毀隔・破鎖'],
+      ['喪門','太歲前二辰（年支順二）'],
+      ['弔客','太歲後二辰（年支逆二）'],
+      ['病符','太歲後一辰（年支逆一）'],
+      ['天盜','課內見子，或貴神剋將神'],
+      ['喪車','春酉・夏子・秋卯・冬午（季節）'],
+      ['四丘','春丑・夏辰・秋未・冬戌（季節）'],
+      ['飛廉','正戌・二巳・三午・四未・五申・六酉・七辰・八亥・九子・十丑・十一寅・十二卯'],
+      ['地煞','劫煞順數五位'],
+      ['滅門','陽月逆三、陰月順三（月建）'],
+      ['祿倒','甲卯・乙辰・丙午・丁未・戊午・己未・庚酉・辛戌・壬子・癸丑（年干）'],
+      ['馬倒','寅午戌酉・申子辰卯・巳酉丑子・亥卯未午（年支）'],
+      ['天鬼','春酉・夏子・秋卯・冬午（季節）']
+    ];
+    var ssRefHTML = '<details class="ssref"><summary>收錄 '+SS_REF.length+' 種神煞與查法</summary><div class="ssref-b">'+
+      SS_REF.map(function(t){return '<div class="ssref-r"><b>'+t[0]+'</b><span>'+t[1]+'</span></div>';}).join('')+
+      '</div></details>';
+    var ssHTML = (ss.length ? ss.map(function(s){
+      var where=(s.at||[]).map(function(a){
+        return '<span class="ss-at at-'+posClass(a)+'">'+a+'</span>';
+      }).join('');
+      if((s.pillar||[]).length) where += '<span class="ss-at at-pil">'+s.pillar.join('、')+'</span>';
+      return '<div class="ss-row '+ssClass(s.name)+'"><div class="ss-top"><span class="ss-t">'+s.name+'</span>'+
+        where+
+        '<span class="ss-b">'+s.basis+'</span></div>'+
+        (s.note?'<div class="ss-n">'+s.note+'</div>':'')+'</div>';
+    }).join('') : '<div class="ss-n">本課未見所收神煞（四柱與四位皆未逢）。</div>') + ssRefHTML;
+
+    body.innerHTML=
+    '<div class="card">'+
+      '<div class="c-head"><div class="c-no">課</div><div class="c-title">四柱</div><div class="c-note">'+(r.mode==='gz'?'干支輸入':r.input.dateText)+'</div></div>'+
+      '<div class="sz">'+col('年柱',sz.year.g,sz.year.z)+col('月柱',sz.month.g,sz.month.z)+
+        col('日柱',sz.day.g,sz.day.z)+col('時柱',sz.hour.g,sz.hour.z)+'</div>'+
+      '<div class="kvgrid">'+
+        '<div class="kv"><div class="k">月建</div><div class="v">'+r.monthJian+'（'+r.monthWx+'）</div></div>'+
+        '<div class="kv"><div class="k">月將</div><div class="v">'+r.jiang.zhi+'（'+r.jiang.name+'）</div></div>'+
+        '<div class="kv"><div class="k">日空（旬空）</div><div class="v">'+r.kong.join('、')+'</div></div>'+
+        '<div class="kv"><div class="k">貴人</div><div class="v">'+r.gui.zhi+'（'+(r.gui.day?'晝貴':'夜貴')+'·'+(r.gui.forward?'順':'逆')+'）'+(r.gui.rev?'<span style="color:#c9a25c;font-size:11px">辛壬癸反</span>':'')+'</div></div>'+
+      '</div>'+
+    '</div>'+
+
+    '<div class="card">'+
+      '<div class="c-head"><div class="c-no">式</div><div class="c-title">課式 · 干神將方</div></div>'+
+      '<div class="ke">'+keHTML+'</div>'+
+    '</div>'+
+
+    '<div class="card">'+
+      '<div class="c-head"><div class="c-no">煞</div><div class="c-title">神煞</div><div class="c-note">'+(ss.length?ss.length+' 項入課':'無')+'</div></div>'+
+      ssHTML+
+    '</div>'+
+
+    '<div class="card">'+
+      '<div class="c-head"><div class="c-no">合</div><div class="c-title">課中關係（合 · 沖 · 三合）</div></div>'+
+      '<div class="rel-list">'+rels+'</div>'+
+    '</div>'+
+
+    '<div class="row gap" style="margin-bottom:26px">'+
+      '<button class="btn-ghost gold" id="btn-copy">複製課盤</button>'+
+      '<button class="btn-ghost" id="btn-save">存為課例</button>'+
+      '<button class="btn-ghost" id="btn-back">回上方調整</button>'+
+    '</div>';
+
+    $('#btn-copy').addEventListener('click',function(){copyText(textPan(r));});
+    $('#btn-save').addEventListener('click',function(){saveHist(r);});
+    $('#btn-back').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  }
+
+  function textPan(r){
+    var p=r.pos;
+    var lines=[];
+    lines.push('【金口訣課盤】'+(r.mode==='gz'?'干支 '+r.input.szText:r.input.dateText));
+    var ji=jqInfo(r);
+    lines.push('節氣：'+ji.jie.name+' '+JK.fmtMD(ji.jie.date)+' ～ '+ji.nextJie.name+' '+JK.fmtMD(ji.nextJie.date)+(ji.gz?'（依年柱推得 '+ji.year+' 年）':''));
+    lines.push('四柱：'+r.sizhu.year.g+r.sizhu.year.z+'　'+r.sizhu.month.g+r.sizhu.month.z+'　'+r.sizhu.day.g+r.sizhu.day.z+'　'+r.sizhu.hour.g+r.sizhu.hour.z);
+    lines.push('月建：'+r.monthJian+'　月將：'+r.jiang.zhi+'（'+r.jiang.name+'）　'+(r.gui.day?'晝貴':'夜貴')+'：'+r.gui.zhi+(r.gui.forward?'（順行）':'（逆行）'));
+    lines.push('── 課式 ──');
+    [p.ren,p.shen,p.jiang,p.fang].forEach(function(o){
+      lines.push(o.label+'：'+(o.gan||'')+o.zhi+(o.name&&o.label!=='地分'?'（'+o.name+'）':'')+
+        '（'+o.wx+'·'+o.ws+'·'+o.yy+(o.kong?'·空':'')+'）'+(o.used?'　◀ 用爻':''));
+    });
+    lines.push('用爻：'+r.used.label+'（'+r.used.reason+'）');
+    lines.push('主客：'+p.jiang.zhi+'（我） 與 '+p.shen.zhi+'（事）→ '+r.zhuke.rel.s+'　'+r.zhuke.text);
+    lines.push('空亡：'+r.kong.join('、'));
+    if(r.relations.length) lines.push('關係：'+r.relations.join('；'));
+    return lines.join('\n');
+  }
+
+  function copyText(t){
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){toast('已複製課盤');},function(){fallback(t);});
+    } else fallback(t);
+    function fallback(txt){
+      var ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+      document.body.appendChild(ta);ta.select();try{document.execCommand('copy');toast('已複製課盤');}catch(e){toast('複製失敗，請長按選取');}
+      document.body.removeChild(ta);
+    }
+  }
+
+  /* ---------- 歷史 ---------- */
+  var HK='jk_history_v1';
+  function getHist(){try{return JSON.parse(localStorage.getItem(HK)||'[]');}catch(e){return [];}}
+  function saveHist(r){
+    var arr=getHist();
+    var rec={f:r.input.fangIdx,dn:r.input.dayNight,mode:r.mode,
+      t:(r.mode==='gz'?r.input.szText:r.input.dateText)+'　'+r.pos.ren.gan+'／'+r.pos.shen.gan+r.pos.shen.zhi+'／'+r.pos.jiang.gan+r.pos.jiang.zhi+'／'+r.pos.fang.zhi};
+    if(r.mode==='gz'){ rec.gz=r.gzIn; } else { rec.d=r.input.date.toISOString(); }
+    arr.unshift(rec);
+    arr=arr.slice(0,12);
+    try{localStorage.setItem(HK,JSON.stringify(arr));toast('已存為課例');}catch(e){toast('儲存失敗');}
+    renderHist();
+  }
+  function renderHist(){
+    var arr=getHist();var el=$('#hist');if(!el) return;
+    if(!arr.length){el.innerHTML='<div style="color:var(--dim);font-size:12.5px">尚無紀錄</div>';return;}
+    el.innerHTML=arr.map(function(a,i){
+      return '<div class="lbl-row" data-h="'+i+'" style="cursor:pointer"><span style="text-align:left">'+a.t+'</span><b style="color:var(--gold);flex:0 0 auto">載入</b></div>';
+    }).join('');
+    $$('#hist .lbl-row').forEach(function(row){
+      row.addEventListener('click',function(){
+        var a=arr[+row.dataset.h];
+        st.fangIdx=a.f;st.dayNight=a.dn;
+        if(a.mode==='gz'&&a.gz){ st.gz=a.gz; setTimeMode('gz'); syncGzSelects(); }
+        else { if(a.d) setDate(new Date(a.d),true); setTimeMode('date'); }
+        syncFangUI();updateLive();
+        renderPan(compute());goTab('pan');
+      });
+    });
+  }
+  var $histClear=$('#hist-clear');
+  if($histClear) $histClear.addEventListener('click',function(){
+    try{localStorage.removeItem(HK);}catch(e){}
+    renderHist();toast('已清空');
+  });
+
+  renderPan(compute());
+
+  renderHist();
+})();
+</script>
+<script>
+/* PWA：可加到手機主畫面、離線可用（僅在 http/https 下註冊，本機 file:// 開啟時自動跳過） */
+if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function () {});
+  });
+}
+</script>
+</body>
+</html>
