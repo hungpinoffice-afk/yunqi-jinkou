@@ -525,9 +525,10 @@
       grid-template-areas:"mk main" "lb main";
       grid-template-rows:min-content min-content;align-content:center;
       row-gap:0;column-gap:8px;padding:10px 11px;align-items:center}
-    /* 全角括號「（」左邊留白很大，扣掉它，墨跡才會和下面的標籤同一條左邊界 */
+    /* 全角括號「（」的左半是空白，墨跡落在字的右側。
+       10px 字級下量到留白約 0.64em，扣掉 -.6em 後括號墨跡才與下面的標籤同一條左邊界 */
     .ke-mark{grid-area:mk;font-size:10px;line-height:1.25;text-align:left;
-      text-indent:-.34em;min-width:0;white-space:normal;letter-spacing:-.02em;
+      text-indent:-.6em;min-width:0;white-space:normal;letter-spacing:-.02em;
       align-self:end}
     .ke-lb{text-indent:0}
     .ke-mark span{display:inline}
