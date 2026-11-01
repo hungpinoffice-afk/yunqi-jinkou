@@ -514,6 +514,44 @@
   /* 課中關係：生／克 語意色 */
   .ok{color:#3fc48e}
   .bad{color:#ff6b52}
+
+  /* ============ 手機版課式重排（≤480px）============ */
+  @media(max-width:480px){
+    html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+
+    /* 左欄（標記＋標籤）固定寬、內容右側一律左對齊起算 */
+    .ke-row{grid-template-columns:52px minmax(0,1fr);
+      grid-template-areas:"mk main" "lb main";
+      grid-template-rows:min-content min-content;align-content:center;
+      row-gap:0;column-gap:8px;padding:10px 11px;align-items:center}
+    .ke-mark{grid-area:mk;font-size:10px;line-height:1.25;text-align:left;
+      min-width:0;white-space:normal;letter-spacing:-.02em;align-self:end}
+    .ke-mark span{display:inline}
+    .ke-lb{grid-area:lb;font-size:12.5px;line-height:1.3;text-align:left;
+      letter-spacing:.04em;align-self:start}
+
+    /* 內容區：干支／神名／chips 全部同一左邊界，自然換行 */
+    .ke-main{grid-area:main;display:flex;flex-wrap:wrap;align-items:center;
+      gap:5px 7px;min-width:0}
+    .ke-main>.gz{grid-column:auto;justify-self:auto;flex:0 0 auto;
+      font-size:23px;line-height:1.2;grid-template-columns:auto auto}
+    /* 單干／單支時不留空位，四行干支左邊界才會齊 */
+    .ke-main>.gz>.ph{display:none}
+    .ke-main>.jm{grid-column:auto;justify-self:auto;flex:0 0 auto;
+      font-size:18.5px;line-height:1.2}
+    .ke-main>.chips{grid-column:auto;flex:0 0 100%;display:flex;flex-wrap:wrap;
+      align-items:center;justify-content:flex-start;gap:4px 5px}
+    /* 空亡格固定最小寬：有無空亡都佔同樣位置，後面五格才對得齊 */
+    .ke-main>.chips>.cg{justify-self:auto;min-width:46px;justify-content:flex-start}
+    .ke-main>.chips>.ssbox{flex:1 0 100%;justify-self:auto;margin-top:2px}
+
+    /* 每類 chip 給固定最小寬 → 各行同一類落在同一水平位置 */
+    .chip.yy{min-width:22px}
+    .chip.wx{min-width:28px}
+    .chip.ws{min-width:26px}
+    .ke-main>.chips>.cg .chip.kongc{min-width:46px}
+    .chip.ws.out{min-width:38px}
+  }
 </style>
 <meta name="description" content="金口訣七步起課：定四柱、取地分、定月將、定貴神、定將神、定人元、定用爻；含旬空、四大空亡、內外旺衰、30 種神煞與 24 節氣。">
 <link rel="manifest" href="manifest.webmanifest">
