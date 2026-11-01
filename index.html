@@ -525,8 +525,11 @@
       grid-template-areas:"mk main" "lb main";
       grid-template-rows:min-content min-content;align-content:center;
       row-gap:0;column-gap:8px;padding:10px 11px;align-items:center}
+    /* 全角括號「（」左邊留白很大，扣掉它，墨跡才會和下面的標籤同一條左邊界 */
     .ke-mark{grid-area:mk;font-size:10px;line-height:1.25;text-align:left;
-      min-width:0;white-space:normal;letter-spacing:-.02em;align-self:end}
+      text-indent:-.34em;min-width:0;white-space:normal;letter-spacing:-.02em;
+      align-self:end}
+    .ke-lb{text-indent:0}
     .ke-mark span{display:inline}
     .ke-lb{grid-area:lb;font-size:12.5px;line-height:1.3;text-align:left;
       letter-spacing:.04em;align-self:start}
@@ -561,12 +564,19 @@
     .ke-main>.chips>.cg .chip.kongc{min-width:0}
   }
 
-  /* 極窄螢幕：退回流式排列，優先不溢出 */
-  @media(max-width:360px){
-    .ke-main>.chips{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-start}
-    .ke-main>.chips>.cg{justify-content:flex-start}
-    .ke-main>.chips>.ssbox{width:100%;margin-top:2px}
-    .chip{font-size:10px;padding:1px 4px}
+  /* 窄螢幕（≤380px）：欄寬縮小但仍維持固定六欄——
+     不用 flex 回流，四行同一類永遠同一條垂直線 */
+  @media(max-width:380px){
+    .ke-main>.chips{display:grid;
+      grid-template-columns:40px 18px 24px 22px 34px minmax(0,1fr);gap:4px}
+    .ke-main>.chips>.ssbox{grid-column:1/-1;justify-self:stretch;
+      display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-start;margin-top:3px}
+    .chip{font-size:9.5px;padding:1px 4px}
+    .chip.yy{min-width:16px}
+    .chip.wx{min-width:22px}
+    .chip.ws{min-width:20px}
+    .chip.ws.out{min-width:32px}
+    .ke-main>.chips>.cg .chip.kongc{min-width:0}
   }
 </style>
 <meta name="description" content="金口訣七步起課：定四柱、取地分、定月將、定貴神、定將神、定人元、定用爻；含旬空、四大空亡、內外旺衰、30 種神煞與 24 節氣。">
