@@ -1,0 +1,18 @@
+{
+  "name": "雲起時 金口訣",
+  "short_name": "雲起時",
+  "description": "金口訣七步起課：定四柱、取地分、定月將、定貴神、定將神、定人元、定用爻；含旬空、四大空亡、內外旺衰、30 種神煞與 24 節氣。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#100d0a",
+  "theme_color": "#100d0a",
+  "lang": "zh-Hant",
+  "categories": ["utilities", "lifestyle"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
